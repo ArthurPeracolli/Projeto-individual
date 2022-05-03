@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sport Club Corinthians Paulista</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
     <header class="header">
       <div class="container">
@@ -21,34 +24,36 @@
           <li>Ingressos</li>
           <li>Notícias</li>
           <li><a href="../Login/Tela-login.html">Loja</a></li>
-          <a class="btnCadastro" href="../Cadastro/Cadastro.html"
-            >Cadastrar-se</a
-          >
+          <a class="btnCadastro" href="../Cadastro/Cadastro.html">Cadastrar-se</a>
         </ul>
       </div>
     </header>
     <div class="banner">
-      <div class="corimba1"></div>
-      <div class="corimba2">
-        <h1 class="titulo_elenco">Elenco:</h1>
-        <div class="div_btn">
-          <button class="btn_prev">
-            <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
-          </button>
-
-          <button class="btn_prev">
-            <img src="imgs/icons8-duplo-para-a-direita-16.png" />
-          </button>
-        </div>
-        <div class="div_jogador">
-          <img
-            class="img_elenco"
-            src="https://timaoweb.com.br/wp-content/uploads/1987/06/834070_ori__20211019110434_cassio.png"
-          />
+      <div class="corimba1">Pelo Corinthians
+        com muito amor.</div>
+    </div>
+    <div class="corimba2">
+      <h1 class="titulo_elenco">Elenco:</h1>
+      <div class="div_btn">
+        <button class="btn_prev" onclick="btn_prev()">
+          <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
+        </button>
+        <button class="btn_next" onclick="btn_next()">
+          <img src="imgs/icons8-duplo-para-a-direita-16.png" />
+        </button>
+      </div>
+      <div class="div_jogador">
+        <div>
+          <img class="img_elenco_willian" src="imgs/Willian.png" />
           <br />
-          <b class="nome_elenco"> Cassio </b> <br />
-          <span class="posicao_elenco">Posição: Goleiro</span>
-          <span class="idade_elenco">34 Anos</span>
+          <div>
+            <b class="nome_elenco"> Willian </b> <br />
+            <span class="posicao_elenco">Posição: Meio-Campista</span> <br>
+            <span class="idade_elenco">33 Anos</span>
+          </div>
+        </div>
+        <div>
+          <canvas id="myChart" class="grafico_jogador"></canvas>
         </div>
       </div>
     </div>
@@ -74,4 +79,56 @@
       </div>
     </footer>
   </body>
+
 </html>
+
+<script>
+  const data = {
+    labels: [
+      'Drible',
+      'Chute',
+      'Velocidade',
+      'Defesa',
+      'Passe'
+    ],
+    datasets: [ {
+      label: 'Habilidade',
+      data: [ 80, 82, 87, 55, 72 ],
+      fill: true,
+      backgroundColor: '  rgba(94, 81, 81, 0.2) ',
+      borderColor: '#5e5151',
+      pointBackgroundColor: '#5e5151',
+      pointBorderColor: '#000',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    } ]
+  };
+  const config = {
+    type: 'radar',
+    data: data,
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+  };
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+    );
+    </script>
+
+<script>
+  function btn_prev ()
+  {
+  }
+  
+  function btn_next ()
+  {
+  }
+</script>
