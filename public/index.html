@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,6 +7,7 @@
     <title>Sport Club Corinthians Paulista</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Metricas_jogadores.js">
   </head>
 
   <body>
@@ -19,18 +19,19 @@
         </div>
         <ul>
           <li>
-            <a href="../Landing-Page/Landing-Page.html#aboutUs">História</a>
+            <a href="Historia/Historia.html">História</a>
           </li>
           <li>Ingressos</li>
           <li>Notícias</li>
           <li><a href="../Login/Tela-login.html">Loja</a></li>
-          <a class="btnCadastro" href="../Cadastro/Cadastro.html">Cadastrar-se</a>
+          <a class="btnCadastro" href="../Cadastro/Cadastro.html"
+            >Cadastrar-se</a
+          >
         </ul>
       </div>
     </header>
     <div class="banner">
-      <div class="corimba1">Pelo Corinthians
-        com muito amor.</div>
+      <div class="corimba1">Pelo Corinthians com muito amor.</div>
     </div>
     <div class="corimba2">
       <h1 class="titulo_elenco">Elenco:</h1>
@@ -44,11 +45,11 @@
       </div>
       <div class="div_jogador">
         <div>
-          <img class="img_elenco_willian" src="imgs/Willian.png" />
+          <img class="img_elenco_renato_augusto" src="imgs/Renato Augusto.png" />
           <br />
           <div>
-            <b class="nome_elenco"> Willian </b> <br />
-            <span class="posicao_elenco">Posição: Meio-Campista</span> <br>
+            <b class="nome_elenco"> Renato Augusto </b> <br />
+            <span class="posicao_elenco">Posição: Meio-Campista</span> <br />
             <span class="idade_elenco">33 Anos</span>
           </div>
         </div>
@@ -79,56 +80,52 @@
       </div>
     </footer>
   </body>
-
 </html>
 
 <script>
   const data = {
-    labels: [
-      'Drible',
-      'Chute',
-      'Velocidade',
-      'Defesa',
-      'Passe'
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [85, 87, 67, 65, 90],
+        fill: true,
+        backgroundColor: "rgba(94, 81, 81, 0.2) ",
+        borderColor: "#282828",
+        pointBackgroundColor: "#282828",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(255, 99, 132)",
+      },
     ],
-    datasets: [ {
-      label: 'Habilidade',
-      data: [ 80, 82, 87, 55, 72 ],
-      fill: true,
-      backgroundColor: '  rgba(94, 81, 81, 0.2) ',
-      borderColor: '#5e5151',
-      pointBackgroundColor: '#5e5151',
-      pointBorderColor: '#000',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    } ]
   };
   const config = {
-    type: 'radar',
+    type: "radar",
     data: data,
     options: {
+      scales: {
+        r: {
+          angleLines: {
+            color: "white",
+          },
+          grid: { color: "white" },
+        },
+      },
       elements: {
         line: {
-          borderWidth: 3
-        }
-      }
+          borderWidth: 3,
+        },
+      },
     },
   };
 </script>
 
 <script>
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-    );
-    </script>
+  const myChart = new Chart(document.getElementById("myChart"), config);
+</script>
 
 <script>
-  function btn_prev ()
-  {
+  function btn_prev() {
   }
-  
-  function btn_next ()
-  {
-  }
-</script>
+
+  function btn_next() {}
+</script> 
