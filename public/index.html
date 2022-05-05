@@ -7,31 +7,37 @@
     <title>Sport Club Corinthians Paulista</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="Metricas_jogadores.js">
+    <link rel="stylesheet" href="Metricas_jogadores.js" />
+    <link rel="icon" href="imgs/icon.png" class="icon">
   </head>
 
   <body>
     <header class="header">
       <div class="container">
-        <div class="container logo">
-          <img src="Header_Footer/imgs/Corinthians-Logo.png" />
-          <h1>Sport Club Corinthians Paulista</h1>
-        </div>
+        <a href="index.html">
+          <div class="container logo">
+            <img src="Header_Footer/imgs/Corinthians-Logo.png" />
+            <h1>Sport Club Corinthians Paulista</h1>
+          </div>
+        </a>
         <ul>
           <li>
             <a href="Historia/Historia.html">História</a>
           </li>
           <li>Ingressos</li>
-          <li>Notícias</li>
           <li><a href="../Login/Tela-login.html">Loja</a></li>
-          <a class="btnCadastro" href="../Cadastro/Cadastro.html"
-            >Cadastrar-se</a
-          >
+          <li>Cadastro</li>
         </ul>
       </div>
     </header>
     <div class="banner">
-      <div class="corimba1">Pelo Corinthians com muito amor.</div>
+      <div class="corimba1">
+        <li class="text_banner1">Pelo</li>
+        <li class="text_banner2">Corinthians</li>
+        <li class="text_banner3">com</li>
+        <li class="text_banner4">muito</li>
+        <li class="text_banner5">amor.</li>
+      </div>
     </div>
     <div class="corimba2">
       <h1 class="titulo_elenco">Elenco:</h1>
@@ -45,12 +51,20 @@
       </div>
       <div class="div_jogador">
         <div>
-          <img class="img_elenco_renato_augusto" src="imgs/Renato Augusto.png" />
+          <img
+            class="img_elenco_cassio"
+            src="imgs/Cassio.png"
+            id="img_jogador"
+          />
           <br />
           <div>
-            <b class="nome_elenco"> Renato Augusto </b> <br />
-            <span class="posicao_elenco">Posição: Meio-Campista</span> <br />
-            <span class="idade_elenco">33 Anos</span>
+            <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
+            <span class="posicao_elenco"
+              >Posição:
+              <span id="posicao_jogador"> Goleiro </span>
+            </span>
+            <br />
+            <span class="idade_elenco" id="idade_jogador">33 Anos</span>
           </div>
         </div>
         <div>
@@ -83,31 +97,41 @@
 </html>
 
 <script>
-  const data = {
+  const data1 = {
     labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
     datasets: [
       {
         label: "Habilidade",
         data: [85, 87, 67, 65, 90],
         fill: true,
-        backgroundColor: "rgba(94, 81, 81, 0.2) ",
-        borderColor: "#282828",
-        pointBackgroundColor: "#282828",
+        backgroundColor: "rgba(98, 50, 50, 0.7) ",
+        borderColor: "#623232",
+        pointBackgroundColor: "#000",
         pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgb(255, 99, 132)",
+        pointHoverBorderColor: "#623232",
       },
     ],
   };
   const config = {
     type: "radar",
-    data: data,
+    data: data1,
     options: {
       scales: {
         r: {
+          max: 100,
+          beginAtZero: true,
           angleLines: {
             color: "white",
           },
-          grid: { color: "white" },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            color: "grey",
+          },
         },
       },
       elements: {
@@ -124,8 +148,88 @@
 </script>
 
 <script>
+  var jogador = 0;
+
   function btn_prev() {
+    jogador--;
+    change_player()
   }
 
-  function btn_next() {}
-</script> 
+  function btn_next() {
+    jogador++;
+    change_player()
+  }
+
+  function change_player() {
+    switch (jogador) {
+      case 0:
+        nome_jogador.innerHTML = "Cassio";
+        posicao_jogador.innerHTML = "Goleiro";
+        idade_jogador.innerHTML = "33 anos";
+        img_jogador.src = "imgs/Cassio.png";
+        break;
+      case 1:
+        nome_jogador.innerHTML = "Fagner";
+        posicao_jogador.innerHTML = "Lateral";
+        idade_jogador.innerHTML = "32 anos";
+        img_jogador.src = "imgs/Fagner.png";
+        break;
+      case 2:
+        nome_jogador.innerHTML = "Gil";
+        posicao_jogador.innerHTML = "Zagueiro";
+        idade_jogador.innerHTML = "34 anos";
+        img_jogador.src = "imgs/Gil.png";
+        break;
+      case 3:
+        nome_jogador.innerHTML = "João Victor";
+        posicao_jogador.innerHTML = "Zagueiro";
+        idade_jogador.innerHTML = "23 anos";
+        img_jogador.src = "imgs/Joao Vitor.png";
+        break;
+      case 4:
+        nome_jogador.innerHTML = "Fabio Santos";
+        posicao_jogador.innerHTML = "Lateral";
+        idade_jogador.innerHTML = "36 anos";
+        img_jogador.src = "imgs/Fabio Santos.png";
+        break;
+      case 5:
+        nome_jogador.innerHTML = "Maycon";
+        posicao_jogador.innerHTML = "Volante";
+        idade_jogador.innerHTML = "24 anos";
+        img_jogador.src = "imgs/Maycon.png";
+        break;
+      case 6:
+        nome_jogador.innerHTML = "Paulinho";
+        posicao_jogador.innerHTML = "Meio-Campista";
+        idade_jogador.innerHTML = "33 anos";
+        img_jogador.src = "imgs/Paulinho.png";
+        break;
+      case 7:
+        nome_jogador.innerHTML = "Renato Augusto";
+        posicao_jogador.innerHTML = "Meio-Campista";
+        idade_jogador.innerHTML = "34 anos";
+        img_jogador.src = "imgs/Renato Augusto.png";
+        break;
+      case 8:
+        nome_jogador.innerHTML = "Roger Guedes";
+        posicao_jogador.innerHTML = "Atacante";
+        idade_jogador.innerHTML = "25 anos";
+        img_jogador.src = "imgs/Roger Guedes.png";
+        break;
+      case 9:
+        nome_jogador.innerHTML = "Jô";
+        posicao_jogador.innerHTML = "Atacante";
+        idade_jogador.innerHTML = "35 anos";
+        img_jogador.src = "imgs/Jo.png";
+        break;
+      case 10:
+        nome_jogador.innerHTML = "Willian";
+        posicao_jogador.innerHTML = "Atacante";
+        idade_jogador.innerHTML = "33 anos";
+        img_jogador.src = "imgs/Willian.png";
+        break;
+    }
+  }
+</script>
+
+
