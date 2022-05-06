@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingressos - Corinthians</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="icon" href="../imgs/icon.png" class="icon" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="../index.html">
+        <div class="container logo">
+          <img src="../Header_Footer/imgs/Corinthians-Logo.png  " />
+          <h1>Sport Club Corinthians Paulista</h1>
+        </div>
+      </a>
+        <ul>
+          <li><a href="../Historia/Historia.html">História</a></li>
+          <li><a href="Ingresso.html"> Ingressos</a></li>
+          <li>Notícias</li>
+          <li><a href="../Login/Tela-login.html">Cadastro</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="banner">
+      <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
+      <h4 class="banner_txt2">Venha torcer junto com o bando de loucos.</h4>
+    </div>
+    <div class="estadio">
+      <div class="div_estadio">
+        <h1 class="titulo_estadio">Setores</h1>
+        <h3>Neo Química Arena</h3>
+        <img src="Imgs/34-setores-m.jpg" class="img_estadio" />
+        <button class="btn_localizacao">
+          <a
+            href="https://www.google.com.br/maps/dir//Arena+Corinthians/@-23.554582,-46.4746486,1348a,20y,41.16t/data=!3m2!1e3!5s0x94ce66de952b5e23:0x3333a57070620b93!4m8!4m7!1m0!1m5!1m1!1s0x0:0xf2b061ffbcd2ecf8!2m2!1d-46.4742676!2d-23.5453221"
+            target="_blank"
+          >
+            Localização</a
+          >
+        </button>
+      </div>
+      <div class="div_bilheteria">
+        <h1 class="titulo_estadio">Bilheteria</h1>
+        <div id="div_select" class="div_block">
+        <h3>Escolha o setor:</h3>
+        <select id="setor" class="select_setor" >
+          <option value="1">N9 - Oeste superior</option>
+          <option value="2">N8 - Bussiness</option>
+          <option value="3">N5/N6 - Camarotes</option>
+          <option value="4">N4 - Minha Cadeira</option>
+          <option value="5">N4 - Norte</option>
+          <option value="6">N6 - Leste Superior Central</option>
+          <option value="7">N6 - Leste Superior Lateral</option>
+          <option value="8">N4 - Leste Inferior Central</option>
+          <option value="9">N4 - Leste Inferior Lateral</option>
+          <option value="10">N4 - Sul</option>
+        </select>
+        <button onclick="btn_escolha()" class="btn_setor">Confimar setor</button>
+      </div>
+      <div class="div_entrada_inteira" style="display: none;" id="div_setor">
+        <div>
+        <span class="span_entrada_inteira" id="span_setor_entrada_int"></span> <br />
+        <span class="span_preco_entrada_int" id="span_valor_int"></spa>
+        </div>
+          <select id="select_entrada_int" class="select_entrada_inteira">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          </select>
+          </div>
+    <div class="div_entrada_inteira" style="display: none;" id="div_setor2">
+    <div>
+      <span class="span_entrada_inteira" id="span_setor_entrada_meia"></span> <br />
+      <span class="span_preco_entrada_int" id="span_valor_meia"></span>
+    </div>
+    <select id="select_entrada_int" class="select_entrada_inteira">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    </div>
+  </div>
+  <button style="display: none;" id="btn" class="btn_comprar">Comprar</button>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="container logo">
+          <h1>Sport Club Corinthians Paulista</h1>
+        </div>
+
+        <div class="container middle">
+          <ul>
+            <li>Informação</li>
+            <li>Suporte</li>
+            <li>Termos de uso</li>
+          </ul>
+        </div>
+
+        <div class="container socials">
+          <img src="../Header_Footer/imgs/instagram.png" alt="" />
+          <img src="../Header_Footer/imgs/facebook.png" alt="" />
+          <img src="../Header_Footer/imgs/linkedin.png" alt="" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+<script>
+  function btn_escolha() {
+ var setor_escolhido = Number (setor.value)
+ div_select.style.display = 'none';
+ div_setor.style.display = 'flex';
+ div_setor2.style.display = 'flex';
+ btn.style.display = 'flex';
+
+switch(setor_escolhido) {
+  case 1:  span_setor_entrada_int.innerHTML = 'N9 - Oeste Superior';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
+           span_setor_entrada_meia.innerHTML = 'N9 - Oeste Superior';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 40,00';
+           break;
+  case 2:  span_setor_entrada_int.innerHTML = 'N8 - Business';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 350,00';
+           span_setor_entrada_meia.innerHTML = 'N8 - Business';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 150,00';
+           break;
+  case 3:  span_setor_entrada_int.innerHTML = 'N5/N6 - Camarotes';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 500,00';
+           span_setor_entrada_meia.innerHTML = 'N5/N6 - Camarotes';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 250,00';
+           break;
+  case 4:  span_setor_entrada_int.innerHTML = 'N4 - Minha Cadeira';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 300,00';
+           span_setor_entrada_meia.innerHTML = 'N4 - Minha Cadeira';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 150,00';
+           break;
+  case 5:  span_setor_entrada_int.innerHTML = 'N4 - Norte';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
+           span_setor_entrada_meia.innerHTML = 'N4 - Norte';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 20,00';
+           break;
+  case 6:  span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Central';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
+           span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Central';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 27,00';
+           break;
+  case 7:  span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Lateral';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
+           span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Lateral';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 27,00';
+           break;
+  case 8:  span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Central';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 100,00';
+           span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Central';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 100,00';
+           break;
+  case 9:  span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Lateral';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
+           span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Lateral';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 40,00';
+           break;
+  case 10:  span_setor_entrada_int.innerHTML = 'N4 - Sul';
+           span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
+           span_setor_entrada_meia.innerHTML = 'N4 - Sul';
+           span_valor_meia.innerHTML= 'Meia entrada: R$ 20,00';
+           break;
+  }
+}
+</script>
+
+

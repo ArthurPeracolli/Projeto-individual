@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="Metricas_jogadores.js" />
-    <link rel="icon" href="imgs/icon.png" class="icon">
+    <link rel="icon" href="imgs/icon.png" class="icon" />
   </head>
 
   <body>
@@ -24,7 +24,7 @@
           <li>
             <a href="Historia/Historia.html">História</a>
           </li>
-          <li>Ingressos</li>
+          <li> <a href="Ingresso/Ingresso.html"> Ingressos</a></li>
           <li><a href="../Login/Tela-login.html">Loja</a></li>
           <li>Cadastro</li>
         </ul>
@@ -98,15 +98,15 @@
 
 <script>
   const data1 = {
-    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    labels: ["Reflexo", "Chute", "Velocidade", "Posicionamento", "Passe"],
     datasets: [
       {
         label: "Habilidade",
-        data: [85, 87, 67, 65, 90],
+        data: [82, 64, 57, 88, 70],
         fill: true,
         backgroundColor: "rgba(98, 50, 50, 0.7) ",
         borderColor: "#623232",
-        pointBackgroundColor: "#000",
+        pointBackgroundColor: "#623232",
         pointHoverBackgroundColor: "#fff",
         pointHoverBorderColor: "#623232",
       },
@@ -117,9 +117,9 @@
     data: data1,
     options: {
       scales: {
-        r: {
-          max: 100,
-          beginAtZero: true,
+          r: {
+            max: 100,
+            beginAtZero: true,
           angleLines: {
             color: "white",
           },
@@ -229,7 +229,6 @@
         img_jogador.src = "imgs/Willian.png";
         break;
     }
+
   }
 </script>
-
-
