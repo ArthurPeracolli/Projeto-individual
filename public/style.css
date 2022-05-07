@@ -8,10 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
+.a_index {
   display: flex;
-  width: 75%;
   height: 100%;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
 }
 
 .header {
@@ -21,6 +23,10 @@ a {
   justify-content: center;
   align-items: center;
   border-bottom: solid 2px #ffffff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%; 
 }
 
 .header a {
@@ -137,13 +143,14 @@ a {
 }
 
 .banner {
-  height: 95vh;
+  height: 88vh;
   width: 100%;
   background-image: url("imgs/ronaldo\ gif.gif");
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-size: cover;
+  margin-top: 12vh;
 }
 
 .corimba1 {
@@ -213,14 +220,14 @@ a {
 
 .corimba2 {
   width: 100%;
-  height: 39vw;
+  height: 80vh;
   color: white;
   background-color: #000;
   font-size: 2vh;
   padding: 0;
   margin: 0;
   border-bottom: solid 2px #fff;
-  border-top: solid 2px #fff;
+
   background-color: #121212;
 }
 

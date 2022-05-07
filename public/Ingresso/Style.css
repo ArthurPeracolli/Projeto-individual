@@ -6,15 +6,14 @@ body {
 
 .a_index {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  align-items: center;
   height: 100%;
-  align-self: center;
   text-decoration: none;
 }
 
 .a_localizacao {
   text-decoration: none;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +33,10 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 4px #ffffff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%; 
 }
 
 .header a {
@@ -174,7 +176,7 @@ h4 {
 
 
 .banner {
-  height: 70vh;
+  height: 88vh;
   width: 100%;
   background-image: url(Imgs/torcida.jpg);
   display: flex;
@@ -213,7 +215,6 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10vh;
 }
 
 .img_estadio {
@@ -233,6 +234,9 @@ h4 {
   flex-direction: column;
   width: 55%;
   margin-top: 10vh;
+  border: solid 1px #282828;
+  border-radius: 8px;
+  padding: 10vh;
 }
 
 
@@ -300,6 +304,7 @@ h4 {
   border: 2px solid #000000;
   text-align: center;
   border-radius: 5px;
+  margin-right: 4vw;
 }
 
 .btn_setor {
@@ -348,5 +353,33 @@ h4 {
   display: flex;
   flex-direction: row;
   column-gap: 3vw;
-  
+  text-align: center;
+  align-self: center;
+}
+
+.div_span_setores {
+  color: #ffc242;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div_span_setores ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+
+
+.span_setores_acessibilidade {
+  list-style: none;
+  padding: 0;
+  justify-content: space-evenly;
+  color: #ffc242;
+  font-weight: bolder;
+  border-bottom: solid 2px #ffc242;
 }
