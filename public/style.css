@@ -22,7 +22,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 2px #ffffff;
   overflow: hidden;
   position: fixed;
   top: 0;

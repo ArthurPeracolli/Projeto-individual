@@ -15,10 +15,10 @@
     <div class="container">
       <div class="container logo">
         <a href="../index.html" class="a_index">
-        <img src="../Header_Footer/imgs/Corinthians-Logo.png  " />
-        <h1>Sport Club Corinthians Paulista</h1>
-      </a>
-        </div>
+          <img src="../Header_Footer/imgs/Corinthians-Logo.png  " />
+          <h1>Sport Club Corinthians Paulista</h1>
+        </a>
+      </div>
       <ul>
         <li><a href="../Historia/Historia.html">História</a></li>
         <li><a href="Ingresso.html"> Ingressos</a></li>
@@ -28,35 +28,37 @@
     </div>
   </header>
   <div class="banner">
-    <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
-    <h4 class="banner_txt2">Venha torcer junto com o bando de loucos.</h4>
+    <div class="div_banner_txt">
+      <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
+      <h4 class="banner_txt2">Venha torcer junto com o bando de loucos.</h4>
+    </div>
   </div>
   <div class="estadio">
     <div class="div_estadio">
       <h1 class="titulo_estadio">Setores</h1>
       <h3>Neo Química Arena</h3>
-    <div class="div_span_setores">
-      <ul>
-      <li class="span_setores_acessibilidade" onclick="setores()">SETORES</li> 
-      <li class="span_setores_acessibilidade" onclick="acessibilidade()">ACESSIBILIDADE</li>
-      </ul>
-    </div>
-      <img src="Imgs/34-setores-m.jpg" class="img_estadio_setores" id="img_setores"/>
-      <img src="Imgs/Acessibilidade.jpg" class="img_estadio_acessibilibade" id="img_acessibilidade"/>
+      <div class="div_span_setores">
+        <ul>
+          <li class="span_setores_acessibilidade" onclick="setores()">SETORES</li>
+          <li class="span_setores_acessibilidade" onclick="acessibilidade()">ACESSIBILIDADE</li>
+        </ul>
+      </div>
+      <img src="Imgs/34-setores-m.jpg" class="img_estadio_setores" id="img_setores" />
+      <img src="Imgs/Acessibilidade.jpg" class="img_estadio_acessibilibade" id="img_acessibilidade" />
       <div class="div_btn_setores_acessibilidade">
         <a href="https://www.google.com/maps/d/viewer?hl=pt-BR&hl=pt-BR&mid=1wdLui34g4OCwicyv8wAx_sjETMI&ll=-23.54476975478073%2C-46.4748609216645&z=16"
-        target="_blank" class="a_localizacao">
-        <button class="btn_localizacao">
-          Estacionamento
-        </button>
-      </a>
-      <a href="https://www.google.com.br/maps/dir//Arena+Corinthians/@-23.554582,-46.4746486,1348a,20y,41.16t/data=!3m2!1e3!5s0x94ce66de952b5e23:0x3333a57070620b93!4m8!4m7!1m0!1m5!1m1!1s0x0:0xf2b061ffbcd2ecf8!2m2!1d-46.4742676!2d-23.5453221"
-        target="_blank" class="a_localizacao">
-        <button class="btn_localizacao">
-          Localização
-        </button>
-      </a>
-    </div>
+          target="_blank" class="a_localizacao">
+          <button class="btn_localizacao">
+            Estacionamento
+          </button>
+        </a>
+        <a href="https://www.google.com.br/maps/dir//Arena+Corinthians/@-23.554582,-46.4746486,1348a,20y,41.16t/data=!3m2!1e3!5s0x94ce66de952b5e23:0x3333a57070620b93!4m8!4m7!1m0!1m5!1m1!1s0x0:0xf2b061ffbcd2ecf8!2m2!1d-46.4742676!2d-23.5453221"
+          target="_blank" class="a_localizacao">
+          <button class="btn_localizacao">
+            Localização
+          </button>
+        </a>
+      </div>
     </div>
     <div class="div_bilheteria">
       <h1 class="titulo_estadio">Bilheteria</h1>
@@ -76,7 +78,6 @@
           <option value="10">N4 - Sul</option>
         </select>
         <button onclick="btn_escolha()" class="btn_setor">Confimar setor</button>
-        <p id="p_msg_erro" class="p_msg_erro"></p>
       </div>
       <div class="div_entrada_inteira" style="display: none;" id="div_setor">
         <div>
@@ -118,56 +119,57 @@
         <button style="display: none;" id="btn_voltar" class="btn_comprar" onclick="voltar()">Voltar</button>
         <button style="display: none;" id="btn_comprar" class="btn_comprar" onclick="comprar()">Comprar</button>
       </div>
-      <div id="div_msg_erro_entrada" class="span_msg_erro_entrada">
-        Insira a quantidade de ingressos desejada
-      </div>
       <div class="div_dados_e_total" id="div_dados_e_total">
-      <div class="div_dados_usuario" style="display: none;" id="div_setor3">
-        <h2>
-          Insira os seus dados:
-        </h2>
-        <div class="div_info_usuario">
-          <span class="span_usuario">Nome:</span> <input type="text" class="input_usuario" placeholder="Insira o seu nome"> <br>
-          <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario" placeholder="Insira o seu Telefone"> <br>
-          <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario" placeholder="Insira o seu CPF"> <br>
-          <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario" placeholder="Insira o seu e-mail">
-          <div class="div_btn_confirmar_dados">
-            <button class="btn_comprar" onclick="voltar_menu_setor()">Voltar</button>
-            <button class="btn_comprar">Confirmar Dados</button>
+        <div class="div_dados_usuario" style="display: none;" id="div_setor3">
+          <h2>
+            Insira os seus dados:
+          </h2>
+          <div class="div_info_usuario">
+            <span class="span_usuario">Nome:</span> <input type="text" class="input_usuario"
+              placeholder="Insira o seu nome"> <br>
+            <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario"
+              placeholder="Insira o seu Telefone"> <br>
+            <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
+              placeholder="Insira o seu CPF"> <br>
+            <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario"
+              placeholder="Insira o seu e-mail">
+            <div class="div_btn_confirmar_dados">
+              <button class="btn_comprar" onclick="voltar_menu_setor()">Voltar</button>
+              <button class="btn_comprar">Confirmar Dados</button>
+            </div>
           </div>
         </div>
+        <div class="div_total" id="div_total">
+          <h2 class="h2_total">Subtotal:</h2>
+          <div class="div_span_total">
+            <div class="div_total_meia_e_inteira">
+              <div class="div_tipo_de_ingresso">
+                <span class="span_total">Tipo de Ingresso:</span>
+                <span class="span_total" id="span_tipo_ingresso_inteira">Inteira</span> <br> <br>
+                <span class="span_total">Quantidade:</span>
+                <span class="span_total" id="span_qtd_total_inteira"></span> <br> <br>
+                <span class="span_total">Subtotal inteira:</span>
+                <span class="span_total" id="span_total_inteira"></span>
+              </div>
+              <div class="div_tipo_de_ingresso2">
+                <span class="span_total">Tipo de Ingresso:</span>
+                <span class="span_total" id="span_tipo_ingresso_meia">Meia</span> <br> <br>
+                <span class="span_total">Quantidade:</span>
+                <span class="span_total" id="span_qtd_total_meia"></span> <br> <br>
+                <span class="span_total">Subtotal meia:</span>
+                <span class="span_total" id="span_total_meia"></span>
+              </div>
+              <div class="div_totalidade">
+                <span class="span_valor_final">Valor total:</span>
+                <span class="span_valor_final" id="span_total"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-         <div class="div_total" id="div_total">
-        <h2 class="h2_total">Subtotal:</h2>
-        <div class="div_span_total">
-          <div class="div_total_meia_e_inteira">
-          <div class="div_tipo_de_ingresso">
-          <span class="span_total">Tipo de Ingresso:</span>
-          <span class="span_total" id="span_tipo_ingresso_inteira"></span> <br> <br>
-          <span class="span_total">Quantidade:</span>
-          <span class="span_total" id="span_qtd_total_inteira"></span>  <br> <br>
-          <span class="span_total">Subtotal inteira:</span>  
-          <span class="span_total" id="span_total_inteira"></span> 
-          </div> 
-          <div class="div_tipo_de_ingresso2">
-            <span class="span_total">Tipo de Ingresso:</span>
-            <span class="span_total" id="span_tipo_ingresso_meia"></span> <br> <br>
-            <span class="span_total">Quantidade:</span>
-            <span class="span_total" id="span_qtd_total_meia"></span>  <br> <br>
-            <span class="span_total">Subtotal meia:</span> 
-            <span class="span_total" id="span_total_meia"></span> 
-          </div> 
-          <div class="div_totalidade">
-            <span class="span_valor_final">Valor total:</span>
-            <span class="span_valor_final" id="span_total"></span>
-           </div>
-        </div>
-        </div>
-         </div>
-         
-       </div>
-     </div>
     </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -200,7 +202,7 @@
     var setor_escolhido = Number(setor.value)
 
     if (setor_escolhido == 0) {
-      p_msg_erro.innerHTML = 'Selecione um setor válido'
+      alert("Selecione um setor válido")
     }
 
     else {
@@ -286,8 +288,8 @@
   }
 
   function comprar() {
-    var entrada_int = Number (select_entrada_int.value)
-    var entrada_meia = Number (select_entrada_meia.value)
+    var entrada_int = Number(select_entrada_int.value)
+    var entrada_meia = Number(select_entrada_meia.value)
     var setor_escolhido = Number(setor.value)
     var oeste_superior_int = 80 * entrada_int
     var oeste_superior_meia = 40 * entrada_meia
@@ -300,10 +302,12 @@
     var camarote_total = camarote_int + camarote_meia
     var minha_cadeira_int = 300 * entrada_int
     var minha_cadeira_meia = 150 * entrada_meia
+    var minha_cadeira_total = minha_cadeira_int + minha_cadeira_meia
     var norte_int = 40 * entrada_int
     var norte_meia = 20 * entrada_meia
+    var norte_total = norte_int + norte_meia
     var leste_sup_cent_int = 54 * entrada_int
-    var leste_sup_cent_meia = 27 * entrada_meia 
+    var leste_sup_cent_meia = 27 * entrada_meia
     var leste_sup_cent_total = leste_sup_cent_int + leste_sup_cent_meia
     var leste_inf_cent_int = 100 * entrada_int
     var leste_inf_cent_meia = 50 * entrada_meia
@@ -315,114 +319,101 @@
     var sul_meia = 20 * entrada_meia
     var sul_total = sul_int + sul_meia
 
-
-
-    if(entrada_int == 0 && entrada_meia == 0) {
-      div_msg_erro_entrada.style.display = 'flex' 
+    if (entrada_int == 0 && entrada_meia == 0) {
+      alert("Insira a quantidade de ingressos desejada")
     }
-   else {
-    div_msg_erro_entrada.style.display = 'none' 
-    div_setor.style.display = 'none';
-    div_setor2.style.display = 'none';
-    btn_comprar.style.display = 'none';
-    btn_voltar.style.display = 'none';
-    div_setor3.style.display = 'flex';
-    div_dados_e_total.style.display = 'flex'
+    else {
+      div_setor.style.display = 'none';
+      div_setor2.style.display = 'none';
+      btn_comprar.style.display = 'none';
+      btn_voltar.style.display = 'none';
+      div_setor3.style.display = 'flex';
+      div_dados_e_total.style.display = 'flex'
 
-    switch (setor_escolhido) {
-      case 1: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-              span_qtd_total_inteira.innerHTML = entrada_int
-              span_total_inteira.innerHTML = `${oeste_superior_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-              span_tipo_ingresso_meia.innerHTML = 'Meia';
-              span_qtd_total_meia.innerHTML = entrada_meia
-              span_total_meia.innerHTML = `${oeste_superior_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-              span_total.innerHTML = `${oeste_superior_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+      switch (setor_escolhido) {
+        case 1:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${oeste_superior_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${oeste_superior_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${oeste_superior_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 2: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${business_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${business_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${business_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 2:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${business_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${business_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${business_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 3: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${camarote_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${camarote_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${camarote_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 3:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${camarote_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${camarote_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${camarote_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 4: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${minha_cadeira_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${minha_cadeira_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${minha_cadeira_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 4:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${minha_cadeira_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${minha_cadeira_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${minha_cadeira_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 5: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${norte_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${norte_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${norte_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 5:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${norte_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${norte_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${norte_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 6: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 6:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 7: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 7:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 8: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${leste_inf_cent_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${leste_inf_cent_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${leste_inf_cent_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 8:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${leste_inf_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${leste_inf_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${leste_inf_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 9: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${leste_inf_lat_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${leste_inf_lat_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${leste_inf_lat_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
+        case 9:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${leste_inf_lat_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${leste_inf_lat_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${leste_inf_lat_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
-        case 10: span_tipo_ingresso_inteira.innerHTML = 'Inteira';
-                span_qtd_total_inteira.innerHTML = entrada_int
-                span_total_inteira.innerHTML = `${sul_int.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_tipo_ingresso_meia.innerHTML = 'Meia';
-                span_qtd_total_meia.innerHTML = entrada_meia
-                span_total_meia.innerHTML = `${sul_meia.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`; 
-                span_total.innerHTML = `${sul_total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`;
+        case 10:
+          span_qtd_total_inteira.innerHTML = entrada_int
+          span_total_inteira.innerHTML = `${sul_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia
+          span_total_meia.innerHTML = `${sul_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          span_total.innerHTML = `${sul_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           break;
+      }
+
     }
 
   }
 
-}
-
-function voltar_menu_setor() {
-        div_msg_erro_entrada.style.display = 'none' 
-        div_setor.style.display = 'flex';
-        div_setor2.style.display = 'flex';
-        btn_comprar.style.display = 'flex';
-        btn_voltar.style.display = 'flex';
-        div_setor3.style.display = 'none';
-        div_dados_e_total.style.display = 'none'
-        }
+  function voltar_menu_setor() {
+    div_setor.style.display = 'flex';
+    div_setor2.style.display = 'flex';
+    btn_comprar.style.display = 'flex';
+    btn_voltar.style.display = 'flex';
+    div_setor3.style.display = 'none';
+    div_dados_e_total.style.display = 'none'
+  }
 </script>
