@@ -36,7 +36,7 @@ h4 {
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 100%; 
+  width: 100%;
 }
 
 .header a {
@@ -217,8 +217,14 @@ h4 {
   align-items: center;
 }
 
-.img_estadio {
+.img_estadio_setores {
   height: 65vh;
+  display: flex;
+}
+
+.img_estadio_acessibilibade {
+  height: 65vh;
+  display: none;
 }
 
 .div_estadio {
@@ -278,6 +284,14 @@ h4 {
   margin-bottom: 20px;
   justify-content: space-between;
   display: flex;
+}
+
+.div_dados_usuario {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
 }
 
 .span_entrada_inteira {
@@ -382,4 +396,104 @@ h4 {
   color: #ffc242;
   font-weight: bolder;
   border-bottom: solid 2px #ffc242;
+  cursor: pointer;
+}
+
+.div_btn_setores_acessibilidade {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3vw;
+}
+
+.p_msg_erro {
+  font-size: 2.2vh;
+}
+
+.input_usuario {
+  width: 10vw;
+  height: 3.5vh;
+  border: 2px solid #000000;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.3vh  ;
+}
+
+.span_usuario {
+  font-size: 1.8vh;
+}
+
+.div_info_usuario {
+  display: flex;
+  flex-direction: column;
+}
+
+.span_msg_erro_entrada {
+  margin-top: 3vh;
+  font-size: 2.2vh;
+  align-self: center;
+  display: none;
+}
+
+.div_btn_confirmar_dados {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5vw;
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.div_total {
+  display: flex;
+  width: 50%;
+  background-color: #000;
+  height: 42vh;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction:column;
+}
+
+.div_dados_e_total {
+  display: none;
+  flex-direction: row;
+}
+
+.h2_total {
+  color: #fff;
+}
+
+.span_total {
+  color: #fff;
+}
+
+.div_span_total {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.div_total_meia_e_inteira {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.div_tipo_de_ingresso {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_tipo_de_ingresso2 {
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.span_valor_final {
+  color: #fff;
+}
+
+.div_totalidade {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
