@@ -126,21 +126,21 @@
           </h2>
           <div class="div_info_usuario">
             <span class="span_usuario">Nome:</span> <input type="text" class="input_usuario"
-              placeholder="Insira o seu nome"> <br>
+              placeholder="Insira o seu nome" id="input_nome"> <br>
             <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu Telefone"> <br>
+              placeholder="Insira o seu Telefone" id="input_telefone"> <br>
             <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu CPF"> <br>
+              placeholder="Insira o seu CPF" id="input_cpf"> <br>
             <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario"
-              placeholder="Insira o seu e-mail">
+              placeholder="Insira o seu e-mail" id="input_email">
             <div class="div_btn_confirmar_dados">
               <button class="btn_comprar" onclick="voltar_menu_setor()">Voltar</button>
-              <button class="btn_comprar">Confirmar Dados</button>
+              <button class="btn_comprar" onclick="cadastrar()">Confirmar Dados</button>
             </div>
           </div>
         </div>
         <div class="div_total" id="div_total">
-          <h2 class="h2_total">Subtotal:</h2>
+          <h2 class="h2_total">Resumo da compra:</h2>
           <div class="div_span_total">
             <div class="div_total_meia_e_inteira">
               <div class="div_tipo_de_ingresso">
@@ -416,4 +416,49 @@
     div_setor3.style.display = 'none';
     div_dados_e_total.style.display = 'none'
   }
+
+  function cadastrar() {
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var cpfVar = input_cpf.value;
+        var telefoneVar = input_telefone.value;
+
+        if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "") {
+           alert("Preencha todos os campos")
+        }
+        else {
+          alert("Dados confirmados")
+        }
+
+        fetch("/usuarios  /cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                cpfServer: cpfVar,
+                telefoneServer: telefoneVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                setTimeout(() => {
+                    window.location = "../index.html";
+                }, "2000")
+                
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
 </script>

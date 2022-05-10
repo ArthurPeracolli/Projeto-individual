@@ -281,8 +281,100 @@ html {
   margin-bottom: 5vh;
 }
 
-.grafico_jogador {
-  display: flex;
+.grafico_jogador_cassio {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_fagner {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_gil {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_joao_victor {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_fabio_santos {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_maycon {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_paulinho {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_renato_augusto {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+
+.grafico_jogador_roger_guedes {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+
+.grafico_jogador_jo {
+  display: none;
+  position: relative;
+  height: 23vh;
+  width: 23vw;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.grafico_jogador_willian {
+  display: none;
   position: relative;
   height: 23vh;
   width: 23vw;

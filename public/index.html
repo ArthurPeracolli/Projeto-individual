@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sport Club Corinthians Paulista</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="Metricas_jogadores.js" />
-    <link rel="icon" href="imgs/icon.png" class="icon" />
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="container logo">
-          <a href="index.html" class="a_index">
-            <img src="Header_Footer/imgs/Corinthians-Logo.png" />
-            <h1>Sport Club Corinthians Paulista</h1>
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Club Corinthians Paulista</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="Metricas_jogadores.js" />
+  <link rel="icon" href="imgs/icon.png" class="icon" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="container logo">
+        <a href="index.html" class="a_index">
+          <img src="Header_Footer/imgs/Corinthians-Logo.png" />
+          <h1>Sport Club Corinthians Paulista</h1>
+        </a>
+      </div>
+      <ul>
+        <li>
+          <a href="Historia/Historia.html">História</a>
+        </li>
+        <li><a href="Ingresso/Ingresso.html"> Ingressos</a></li>
+        <li><a href="../Login/Tela-login.html">Loja</a></li>
+        <li>Cadastro</li>
+      </ul>
+    </div>
+  </header>
+  <div class="banner">
+    <div class="corimba1">
+      <li class="text_banner1">Pelo</li>
+      <li class="text_banner2">Corinthians</li>
+      <li class="text_banner3">com</li>
+      <li class="text_banner4">muito</li>
+      <li class="text_banner5">amor.</li>
+    </div>
+  </div>
+  <div class="corimba2">
+    <h1 class="titulo_elenco">Elenco:</h1>
+    <div class="div_btn">
+      <button class="btn_prev" onclick="btn_prev()">
+        <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
+      </button>
+      <button class="btn_next" onclick="btn_next()">
+        <img src="imgs/icons8-duplo-para-a-direita-16.png" />
+      </button>
+    </div>
+    <div class="div_jogador">
+      <div>
+        <img class="img_elenco_cassio" src="imgs/Cassio.png" id="img_jogador" />
+        <br />
+        <div>
+          <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
+          <span class="posicao_elenco">Posição:
+            <span id="posicao_jogador"> Goleiro </span>
+          </span>
+          <br />
+          <span class="idade_elenco" id="idade_jogador">33 Anos</span>
         </div>
+      </div>
+      <div id="div_canvas">
+        <canvas id="chart_cassio" class="grafico_jogador_cassio"></canvas>
+        <canvas id="chart_fagner" class="grafico_jogador_fagner" style="display: none"></canvas>
+        <canvas id="chart_gil" class="grafico_jogador_gil" style="display: none;"></canvas>
+        <canvas id="chart_joao_victor" class="grafico_jogador_joao_victor" style="display: none;"></canvas>
+        <canvas id="chart_fabio_santos" class="grafico_jogador_fabio_santos" style="display: none"></canvas>
+        <canvas id="chart_maycon" class="grafico_jogador_maycon" style="display: none"></canvas>
+        <canvas id="chart_paulinho" class="grafico_jogador_paulinho" style="display: none"></canvas>
+        <canvas id="chart_renato_augusto" class="grafico_jogador_renato_augusto" style="display: none"></canvas>
+        <canvas id="chart_roger_guedes" class="grafico_jogador_roger_guedes" style="display: none"></canvas>
+        <canvas id="chart_jo" class="grafico_jogador_jo" style="display: none"></canvas>
+        <canvas id="chart_willian" class="grafico_jogador_willian" style="display: none"></canvas>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="container logo">
+        <h1>Sport Club Corinthians Paulista</h1>
+      </div>
+
+      <div class="container middle">
         <ul>
-          <li>
-            <a href="Historia/Historia.html">História</a>
-          </li>
-          <li><a href="Ingresso/Ingresso.html"> Ingressos</a></li>
-          <li><a href="../Login/Tela-login.html">Loja</a></li>
-          <li>Cadastro</li>
+          <li>Informação</li>
+          <li>Suporte</li>
+          <li>Termos de uso</li>
         </ul>
       </div>
-    </header>
-    <div class="banner">
-      <div class="corimba1">
-        <li class="text_banner1">Pelo</li>
-        <li class="text_banner2">Corinthians</li>
-        <li class="text_banner3">com</li>
-        <li class="text_banner4">muito</li>
-        <li class="text_banner5">amor.</li>
+
+      <div class="container socials">
+        <img src="imgs/instagram.png" alt="" />
+        <img src="imgs/facebook.png" alt="" />
+        <img src="imgs/linkedin.png" alt="" />
       </div>
     </div>
-    <div class="corimba2">
-      <h1 class="titulo_elenco">Elenco:</h1>
-      <div class="div_btn">
-        <button class="btn_prev" onclick="btn_prev()">
-          <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
-        </button>
-        <button class="btn_next" onclick="btn_next()">
-          <img src="imgs/icons8-duplo-para-a-direita-16.png" />
-        </button>
-      </div>
-      <div class="div_jogador">
-        <div>
-          <img
-            class="img_elenco_cassio"
-            src="imgs/Cassio.png"
-            id="img_jogador"
-          />
-          <br />
-          <div>
-            <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
-            <span class="posicao_elenco"
-              >Posição:
-              <span id="posicao_jogador"> Goleiro </span>
-            </span>
-            <br />
-            <span class="idade_elenco" id="idade_jogador">33 Anos</span>
-          </div>
-        </div>
-        <div id="div_canvas">
-          <canvas id="cassio" class="grafico_jogador"></canvas>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="container logo">
-          <h1>Sport Club Corinthians Paulista</h1>
-        </div>
+  </footer>
+</body>
 
-        <div class="container middle">
-          <ul>
-            <li>Informação</li>
-            <li>Suporte</li>
-            <li>Termos de uso</li>
-          </ul>
-        </div>
-
-        <div class="container socials">
-          <img src="imgs/instagram.png" alt="" />
-          <img src="imgs/facebook.png" alt="" />
-          <img src="imgs/linkedin.png" alt="" />
-        </div>
-      </div>
-    </footer>
-  </body>
 </html>
 
 <script>
@@ -104,17 +111,63 @@
         label: "Habilidade",
         data: [82, 64, 57, 88, 70],
         fill: true,
-        backgroundColor: "rgba(98, 50, 50, 0.7) ",
-        borderColor: "#623232",
-        pointBackgroundColor: "#623232",
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
         pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "#623232",
+        pointHoverBorderColor: "#ffc242",
       },
     ],
   };
-  var config = {
+  var config_cassio = {
     type: "radar",
     data: data1,
+    options: {
+
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data2 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [70, 60, 85, 82, 75],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_fagner = {
+    type: "radar",
+    data: data2,
     options: {
       scales: {
         r: {
@@ -130,7 +183,411 @@
             color: "white",
           },
           ticks: {
-            color: "grey",
+            display: false,
+          
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data3 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [60, 53, 73, 90, 67],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_gil = {
+    type: "radar",
+    data: data3,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data4 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [70, 50, 78, 85, 73],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_joao_victor = {
+    type: "radar",
+    data: data4,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+  const data5 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [70, 64, 75, 82, 75],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_fabio_santos = {
+    type: "radar",
+    data: data5,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+  const data6 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [67, 75, 78, 78, 82],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_maycon = {
+    type: "radar",
+    data: data6,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+  const data7 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [75, 79, 80, 76, 81],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_paulinho = {
+    type: "radar",
+    data: data7,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data8 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [87, 84, 67, 60, 90],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_renato_augusto = {
+    type: "radar",
+    data: data8,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data9 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [87, 79, 90, 47, 77],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_roger_guedes = {
+    type: "radar",
+    data: data9,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data10 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [70, 85, 70, 47, 65],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_jo = {
+    type: "radar",
+    data: data10,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
+          },
+          
+        },
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+
+  const data11 = {
+    labels: ["Drible", "Chute", "Velocidade", "Defesa", "Passe"],
+    datasets: [
+      {
+        label: "Habilidade",
+        data: [92, 74, 95, 44, 84],
+        fill: true,
+        backgroundColor: "rgba(255, 194, 66, 0.6) ",
+        borderColor: "#ffc242",
+        pointBackgroundColor: "#ffc242",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "#ffc242",
+      },
+    ],
+  };
+  var config_willian = {
+    type: "radar",
+    data: data11,
+    options: {
+      scales: {
+        r: {
+          max: 100,
+          beginAtZero: true,
+          angleLines: {
+            color: "white",
+          },
+          grid: {
+            color: "white",
+          },
+          pointLabels: {
+            color: "white",
+          },
+          ticks: {
+            display: false
           },
         },
       },
@@ -144,17 +601,17 @@
 </script>
 
 <script>
-  new Chart(document.getElementById("cassio"), config);
-  //  new Chart(document.getElementById("fagner"), config);
-  //  new Chart(document.getElementById("gil"), config);
-  //  new Chart(document.getElementById("joao_victor"), config);
-  //  new Chart(document.getElementById("fabio_santos"), config);
-  //  new Chart(document.getElementById("maycon"), config);
-  //  new Chart(document.getElementById("paulinho"), config);
-  //  new Chart(document.getElementById("renato_augusto"), config);
-  //  new Chart(document.getElementById("willian"), config);
-  //  new Chart(document.getElementById("roger_guedes"), config);
-  //  new Chart(document.getElementById("jo"), config);
+  new Chart(document.getElementById("chart_cassio"), config_cassio);
+  new Chart(document.getElementById("chart_fagner"), config_fagner);
+  new Chart(document.getElementById("chart_gil"), config_gil);
+  new Chart(document.getElementById("chart_joao_victor"), config_joao_victor);
+  new Chart(document.getElementById("chart_fabio_santos"), config_fabio_santos);
+  new Chart(document.getElementById("chart_maycon"), config_maycon);
+  new Chart(document.getElementById("chart_paulinho"), config_paulinho);
+  new Chart(document.getElementById("chart_renato_augusto"), config_renato_augusto);
+  new Chart(document.getElementById("chart_roger_guedes"), config_roger_guedes);
+  new Chart(document.getElementById("chart_jo"), config_jo);
+  new Chart(document.getElementById("chart_willian"), config_willian);
 </script>
 
 <script>
@@ -177,67 +634,97 @@
         posicao_jogador.innerHTML = "Goleiro";
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Cassio.png";
-        //  div_canvas.innerHTML = `<canvas id="cassio" class="grafico_jogador"></canvas>`;
+        chart_cassio.style.display = "block";
+        chart_fagner.style.display = "none";
         break;
       case 1:
         nome_jogador.innerHTML = "Fagner";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "32 anos";
         img_jogador.src = "imgs/Fagner.png";
+        chart_fagner.style.display = "block";
+        chart_cassio.style.display = "none";
+        chart_gil.style.display = "none";
         break;
       case 2:
         nome_jogador.innerHTML = "Gil";
         posicao_jogador.innerHTML = "Zagueiro";
         idade_jogador.innerHTML = "34 anos";
         img_jogador.src = "imgs/Gil.png";
+        chart_fagner.style.display = "none";
+        chart_gil.style.display = "block";
+        chart_joao_victor.style.display = "none";
         break;
       case 3:
         nome_jogador.innerHTML = "João Victor";
         posicao_jogador.innerHTML = "Zagueiro";
         idade_jogador.innerHTML = "23 anos";
         img_jogador.src = "imgs/Joao Vitor.png";
+        chart_gil.style.display = "none";
+        chart_joao_victor.style.display = "block";
+        chart_fabio_santos.style.display = "none";
         break;
       case 4:
         nome_jogador.innerHTML = "Fabio Santos";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "36 anos";
         img_jogador.src = "imgs/Fabio Santos.png";
+        chart_joao_victor.style.display = "none";
+        chart_fabio_santos.style.display = "block";
+        chart_maycon.style.display = "none";
         break;
       case 5:
         nome_jogador.innerHTML = "Maycon";
         posicao_jogador.innerHTML = "Volante";
         idade_jogador.innerHTML = "24 anos";
         img_jogador.src = "imgs/Maycon.png";
+        chart_fabio_santos.style.display = "none";
+        chart_maycon.style.display = "block";
+        chart_paulinho.style.display = "none";
         break;
       case 6:
         nome_jogador.innerHTML = "Paulinho";
         posicao_jogador.innerHTML = "Meio-Campista";
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Paulinho.png";
+        chart_maycon.style.display = "none";
+        chart_paulinho.style.display = "block";
+        chart_renato_augusto.style.display = "none";
         break;
       case 7:
         nome_jogador.innerHTML = "Renato Augusto";
         posicao_jogador.innerHTML = "Meio-Campista";
         idade_jogador.innerHTML = "34 anos";
         img_jogador.src = "imgs/Renato Augusto.png";
+        chart_paulinho.style.display = "none";
+        chart_renato_augusto.style.display = "block";
+        chart_roger_guedes.style.display = "none";
         break;
       case 8:
         nome_jogador.innerHTML = "Roger Guedes";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "25 anos";
         img_jogador.src = "imgs/Roger Guedes.png";
+        chart_renato_augusto.style.display = "none";
+        chart_roger_guedes.style.display = "block";
+        chart_jo.style.display = "none";
         break;
       case 9:
         nome_jogador.innerHTML = "Jô";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "35 anos";
         img_jogador.src = "imgs/Jo.png";
+        chart_roger_guedes.style.display = "none";
+        chart_jo.style.display = "block";
+        chart_willian.style.display = "none";
         break;
       case 10:
         nome_jogador.innerHTML = "Willian";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Willian.png";
+        chart_willian.style.display = "block";
+        chart_jo.style.display = "none";
         break;
     }
   }
