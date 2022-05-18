@@ -1,99 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sport Club Corinthians Paulista</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="Metricas_jogadores.js" />
-    <link rel="icon" href="imgs/icon.png" class="icon" />
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="container logo">
-          <a href="index.html" class="a_index">
-            <img src="Header_Footer/imgs/Corinthians-Logo.png" />
-            <h1>Sport Club Corinthians Paulista</h1>
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Club Corinthians Paulista</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="Metricas_jogadores.js" />
+  <link rel="icon" href="imgs/icon.png" class="icon" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="container logo">
+        <a href="index.html" class="a_index">
+          <img src="Header_Footer/imgs/Corinthians-Logo.png" />
+          <h1>Sport Club Corinthians Paulista</h1>
+        </a>
+      </div>
+      <ul>
+        <li>
+          <a href="Historia/Historia.html">História</a>
+        </li>
+        <li><a href="Ingresso/Ingresso.html"> Ingressos</a></li>
+        <li><a href="Idolos/Idolos.html">Idolos</a></li>
+        <li>Cadastro</li>
+      </ul>
+    </div>
+  </header>
+  <div class="banner">
+    <div class="corimba1">
+      <li class="text_banner1">Pelo</li>
+      <li class="text_banner2">Corinthians</li>
+      <li class="text_banner3">com</li>
+      <li class="text_banner4">muito</li>
+      <li class="text_banner5">amor.</li>
+    </div>
+  </div>
+  <div class="corimba2">
+    <h1 class="titulo_elenco">Elenco:</h1>
+    <div class="div_btn">
+      <button class="btn_prev" onclick="btn_prev()">
+        <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
+      </button>
+      <button class="btn_next" onclick="btn_next()">
+        <img src="imgs/icons8-duplo-para-a-direita-16.png" />
+      </button>
+    </div>
+    <div class="div_jogador">
+      <div>
+        <img class="img_elenco_cassio" src="imgs/Cassio.png" id="img_jogador" />
+        <br />
+        <div>
+          <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
+          <span class="posicao_elenco">Posição:
+            <span id="posicao_jogador"> Goleiro </span>
+          </span>
+          <br />
+          <span class="idade_elenco" id="idade_jogador">33 Anos</span>
         </div>
+      </div>
+      <div id="div_canvas">
+        <canvas id="chart" class="grafico_jogador_cassio"></canvas>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="container logo">
+        <h1>Sport Club Corinthians Paulista</h1>
+      </div>
+
+      <div class="container middle">
         <ul>
-          <li>
-            <a href="Historia/Historia.html">História</a>
-          </li>
-          <li><a href="Ingresso/Ingresso.html"> Ingressos</a></li>
-          <li><a href="Idolos/Idolos.html">Idolos</a></li>
-          <li>Cadastro</li>
+          <li>Informação</li>
+          <li>Suporte</li>
+          <li>Termos de uso</li>
         </ul>
       </div>
-    </header>
-    <div class="banner">
-      <div class="corimba1">
-        <li class="text_banner1">Pelo</li>
-        <li class="text_banner2">Corinthians</li>
-        <li class="text_banner3">com</li>
-        <li class="text_banner4">muito</li>
-        <li class="text_banner5">amor.</li>
+
+      <div class="container socials">
+        <img src="imgs/instagram.png" alt="" />
+        <img src="imgs/facebook.png" alt="" />
+        <img src="imgs/linkedin.png" alt="" />
       </div>
     </div>
-    <div class="corimba2">
-      <h1 class="titulo_elenco">Elenco:</h1>
-      <div class="div_btn">
-        <button class="btn_prev" onclick="btn_prev()">
-          <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
-        </button>
-        <button class="btn_next" onclick="btn_next()">
-          <img src="imgs/icons8-duplo-para-a-direita-16.png" />
-        </button>
-      </div>
-      <div class="div_jogador">
-        <div>
-          <img
-            class="img_elenco_cassio"
-            src="imgs/Cassio.png"
-            id="img_jogador"
-          />
-          <br />
-          <div>
-            <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
-            <span class="posicao_elenco"
-              >Posição:
-              <span id="posicao_jogador"> Goleiro </span>
-            </span>
-            <br />
-            <span class="idade_elenco" id="idade_jogador">33 Anos</span>
-          </div>
-        </div>
-        <div id="div_canvas">
-          <canvas id="chart" class="grafico_jogador_cassio"></canvas>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="container logo">
-          <h1>Sport Club Corinthians Paulista</h1>
-        </div>
+  </footer>
+</body>
 
-        <div class="container middle">
-          <ul>
-            <li>Informação</li>
-            <li>Suporte</li>
-            <li>Termos de uso</li>
-          </ul>
-        </div>
-
-        <div class="container socials">
-          <img src="imgs/instagram.png" alt="" />
-          <img src="imgs/facebook.png" alt="" />
-          <img src="imgs/linkedin.png" alt="" />
-        </div>
-      </div>
-    </footer>
-  </body>
 </html>
 
 <script>
@@ -156,7 +153,8 @@
   }
 
   function change_player() {
-    var labels = ["Drible", "Chute", "Velocidade", "Defesa", "Passe"];
+    var labelsJogador = ["Drible", "Chute", "Velocidade", "Defesa", "Passe"];
+    var labelsGoleiros = ["Reflexo", "Chute", "Velocidade", "Posicionamento", "Passe"];
     var labelsGoleiro = [
       "Reflexo",
       "Chute",
@@ -173,7 +171,7 @@
         img_jogador.src = "imgs/Cassio.png";
         removeData(chartData);
         var data = [82, 64, 57, 88, 70];
-        addData(chartData, labels, data);
+        addData(chartData, labelsGoleiros, data);
         break;
       case 1:
         nome_jogador.innerHTML = "Fagner";
@@ -182,7 +180,7 @@
         img_jogador.src = "imgs/Fagner.png";
         removeData(chartData);
         var data = [70, 60, 85, 82, 75];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 2:
         nome_jogador.innerHTML = "Gil";
@@ -191,7 +189,7 @@
         img_jogador.src = "imgs/Gil.png";
         removeData(chartData);
         var data = [60, 53, 73, 90, 67];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 3:
         nome_jogador.innerHTML = "João Victor";
@@ -200,7 +198,7 @@
         img_jogador.src = "imgs/Joao Vitor.png";
         removeData(chartData);
         var data = [70, 50, 78, 85, 73];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 4:
         nome_jogador.innerHTML = "Fabio Santos";
@@ -209,7 +207,7 @@
         img_jogador.src = "imgs/Fabio Santos.png";
         removeData(chartData);
         var data = [70, 64, 75, 82, 75];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 5:
         nome_jogador.innerHTML = "Maycon";
@@ -218,7 +216,7 @@
         img_jogador.src = "imgs/Maycon.png";
         removeData(chartData);
         var data = [67, 75, 78, 78, 82];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 6:
         nome_jogador.innerHTML = "Paulinho";
@@ -227,7 +225,7 @@
         img_jogador.src = "imgs/Paulinho.png";
         removeData(chartData);
         var data = [75, 79, 80, 76, 81];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 7:
         nome_jogador.innerHTML = "Renato Augusto";
@@ -236,7 +234,7 @@
         img_jogador.src = "imgs/Renato Augusto.png";
         removeData(chartData);
         var data = [75, 79, 80, 76, 81];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 8:
         nome_jogador.innerHTML = "Roger Guedes";
@@ -245,7 +243,7 @@
         img_jogador.src = "imgs/Roger Guedes.png";
         removeData(chartData);
         var data = [87, 79, 90, 47, 77];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 9:
         nome_jogador.innerHTML = "Jô";
@@ -254,7 +252,7 @@
         img_jogador.src = "imgs/Jo.png";
         removeData(chartData);
         var data = [70, 85, 70, 47, 65];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
       case 10:
         nome_jogador.innerHTML = "Willian";
@@ -263,7 +261,7 @@
         img_jogador.src = "imgs/Willian.png";
         removeData(chartData);
         var data = [92, 74, 95, 44, 84];
-        addData(chartData, labels, data);
+        addData(chartData, labelsJogador, data);
         break;
     }
   }
@@ -278,11 +276,12 @@
   }
 
   function addData(chart, labels, data) {
-    chart.data.labels.push(labels);
+    console.log('DATA :', data)
+    chart.data.labels = labels;
     chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(data);
+      dataset.data = data;
     });
-
+    console.log('DATASET:::: ', chart.data.datasets)
     chart.update();
   }
 </script>
