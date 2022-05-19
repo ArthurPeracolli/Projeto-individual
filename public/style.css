@@ -260,12 +260,14 @@ html {
   border: 0;
   padding: 0;
   background-color: #121212;
+  cursor: pointer;
 }
 
 .btn_next {
   background-color: #121212;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .div_jogador {

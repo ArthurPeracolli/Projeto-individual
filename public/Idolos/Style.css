@@ -246,7 +246,7 @@ h4 {
 
 .container_idolo {
   margin-top: 5vh;
-  height: 100vh;
+  height: 85vh;
   border: solid 1px black;
   width: 70%;
   display: flex;
@@ -268,7 +268,7 @@ h4 {
 .h4_idolo {
   margin: 0;
   padding: 0;
-  font-size: 2.2vh;
+  font-size: 1.8vh;
 }
 
 .div_youtube {
@@ -294,6 +294,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2.5vh;
 }
 
 .h1_titulo_video {
@@ -320,5 +321,12 @@ h4 {
 }
 
 .span_info_idolo {
-  font-size: 2.3vh;
+  font-size: 1.6vh;
+}
+
+.h1_nome_idolo_rincon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2vh;
 }
