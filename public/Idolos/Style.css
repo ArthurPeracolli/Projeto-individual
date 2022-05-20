@@ -33,9 +33,6 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
   width: 100%;
 }
 
@@ -175,7 +172,6 @@ h4 {
 .banner {
   align-items: center;
   justify-content: center;
-  margin-top: 13vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -184,32 +180,27 @@ h4 {
 
 
 .img_idolo {
-  width: 15vw;
+  width: 14vw;
   
-}
-
-.h3_idolo {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background-color: yellow;
-  width: 10vw;
-  font-weight: normal;
 }
 
 .li_idolo {
   padding: 0;
   border: 0;
-  width: 15vw;
+  width: 14vw;
   border: solid 1px black;
   background-color: #000;
+  transition: 0.3s;
 }
 
+.li_idolo:hover {
+  transform: scale(1.2, 1.2);
+}
+
+
+
 .a_idolo {
-  margin: 0;
   text-decoration: none;
-  color: #000;
 }
 
 .img_neto_idolo {
@@ -234,15 +225,16 @@ h4 {
 }
 
 .h3_nome_idolo {
-  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 0;
-  color: #ffffff;
   display: flex;
   align-self: center;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .container_idolo {
   margin-top: 5vh;

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <input type="text" id="input_viagem">
-    <button onclick="cadastrar()">cadastrar</button> <br>
-    <input type="number" id="input_relembrar_viagem">
+  <body>
+    <input type="text" id="input_viagem" />
+    <button onclick="cadastrar()">cadastrar</button> <br />
+    <input type="number" id="input_relembrar_viagem" />
     <button onclick="relembrar()">relembrar</button>
-</body>
-
+    <div id="resultado"></div>
+  </body>
 </html>
 
 <script>
-    function relembrar() {
+  var viagem = [];
 
-    } </script>
+  function cadastrar() {
+    viagem.push(input_viagem.value);
+  }
+  var relembrarVar = Number (input_relembrar_viagem.value)
+  function relembrar() {
+    resultado.innerHTML = viagem[relembrarVar];
+  }
+</script>

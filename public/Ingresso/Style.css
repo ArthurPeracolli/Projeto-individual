@@ -377,6 +377,7 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 5vh;
 }
 
 .div_span_setores ul {
@@ -393,11 +394,23 @@ h4 {
   list-style: none;
   padding: 0;
   justify-content: space-evenly;
+  color: #000;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.span_setores_acessibilidade:hover {
+  list-style: none;
+  padding: 0;
+  justify-content: space-evenly;
   color: #ffc242;
   font-weight: bolder;
-  border-bottom: solid 2px #ffc242;
   cursor: pointer;
+  border-bottom: solid 1px #ffc242;
 }
+
+
 
 .div_btn_setores_acessibilidade {
   display: flex;
