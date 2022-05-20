@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_lista_nome">
+    <button onclick="cadastrar()">cadastrar</button>
+    <button onclick="pesquisar()">pesquisar</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    lista_nomes = []
+    function cadastrar() {
+        var aluno = input_lista_nome.value
+
+        var alunoCadastrado = 0
+
+        for (var i = 0; i < lista_nomes.length; i++) {
+            if (lista_nomes[i] == aluno) {
+                alunoCadastrado = 1
+            }
+
+        }
+
+        if (alunoCadastrado = 0) {
+            lista_nomes.push(aluno)
+        } else{
+            alert('Aluno já existe !')
+        }
+
+    }
+</script>

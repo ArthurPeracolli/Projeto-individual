@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <input type="text" id="input_viagem" />
-    <button onclick="cadastrar()">cadastrar</button> <br />
-    <input type="number" id="input_relembrar_viagem" />
-    <button onclick="relembrar()">relembrar</button>
-    <div id="resultado"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="input_viagem" />
+  <button onclick="cadastrar()">cadastrar</button> <br />
+  <input type="number" id="input_relembrar_viagem" />
+  <button onclick="relembrar()">relembrar</button>
+  <div id="resultado"></div>
+</body>
+
 </html>
 
 <script>
@@ -22,8 +24,14 @@
   function cadastrar() {
     viagem.push(input_viagem.value);
   }
-  var relembrarVar = Number (input_relembrar_viagem.value)
+
   function relembrar() {
-    resultado.innerHTML = viagem[relembrarVar];
+    var relembrarVar = Number(input_relembrar_viagem.value)
+    if (viagem.length >= relembrarVar) {
+      resultado.innerHTML = viagem[relembrarVar - 1];
+    }
+    else {
+      resultado.innerHTML = "Você não fez a viagem X"
+    }
   }
 </script>
