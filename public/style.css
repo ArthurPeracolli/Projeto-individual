@@ -70,14 +70,12 @@ html {
   flex-direction: row;
   width: 30%;
   justify-content: space-between;
-  font-size: clamp( 1vh, 2rem);
-  color: #ffffff;
   text-shadow: 1px 1px 1px #777;
 }
 
 .header li {
   transition: 0.2s;
-  cursor: pointer;
+  cursor: pointer ;
   border: solid 2px transparent;
   border-radius: 5px;
   padding: 8px;
