@@ -124,7 +124,7 @@
           <h2>
             Insira os seus dados:
           </h2>
-          <div class="div_info_usuario">
+          <div class="div_info_usuario" id="div_info_usuario">
             <span class="span_usuario">Nome:</span> <input type="text" class="input_usuario"
               placeholder="Insira o seu nome" id="input_nome"> <br>
             <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario"
@@ -133,11 +133,29 @@
               placeholder="Insira o seu CPF" id="input_cpf"> <br>
             <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario"
               placeholder="Insira o seu e-mail" id="input_email">
-            <div class="div_btn_confirmar_dados">
+            <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
+              placeholder="Insira uma senha" id="input_senha">
+            <span class="span_usuario">Confirmar senha:</span> <input type="password" class="input_usuario"
+              placeholder="Confirme sua senha" id="input_confirmar_senha">
+            <div class="div_btn_confirmar_dados" id="div_btn_confirmar_dados">
               <button class="btn_comprar" onclick="voltar_menu_setor()">Voltar</button>
-              <button class="btn_comprar" onclick="cadastrar()">Confirmar Dados</button>
+              <button class="btn_comprar" onclick="cadastrar()">Cadastrar</button>
+              <button class="btn_comprar" onclick="login()">Login</button>
             </div>
           </div>
+
+          <div class="div_login_usuario" id="div_login_usuario">
+
+            <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
+              placeholder="Insira o seu CPF" id="input_cpf"> <br>
+            <span class="span_usuario">Senha:</span> <input type="text" class="input_usuario"
+              placeholder="Insira o seu e-mail" id="input_email">
+            <div class="div_btn_confirmar_dados" id="div_btn_login">
+              <button class="btn_comprar" onclick="voltar_info_usuario()">Voltar</button>
+              <button class="btn_comprar">Login</button>
+            </div>
+          </div>
+
         </div>
         <div class="div_total" id="div_total">
           <h2 class="h2_total">Resumo da compra:</h2>
@@ -291,30 +309,39 @@
     var entrada_int = Number(select_entrada_int.value)
     var entrada_meia = Number(select_entrada_meia.value)
     var setor_escolhido = Number(setor.value)
+
     var oeste_superior_int = 80 * entrada_int
     var oeste_superior_meia = 40 * entrada_meia
     var oeste_superior_total = oeste_superior_int + oeste_superior_meia
+
     var business_int = 350 * entrada_int
     var business_meia = 175 * entrada_meia
     var business_total = business_int + business_meia
+
     var camarote_int = 500 * entrada_int
     var camarote_meia = 250 * entrada_meia
     var camarote_total = camarote_int + camarote_meia
+
     var minha_cadeira_int = 300 * entrada_int
     var minha_cadeira_meia = 150 * entrada_meia
     var minha_cadeira_total = minha_cadeira_int + minha_cadeira_meia
+
     var norte_int = 40 * entrada_int
     var norte_meia = 20 * entrada_meia
     var norte_total = norte_int + norte_meia
+
     var leste_sup_cent_int = 54 * entrada_int
     var leste_sup_cent_meia = 27 * entrada_meia
     var leste_sup_cent_total = leste_sup_cent_int + leste_sup_cent_meia
+
     var leste_inf_cent_int = 100 * entrada_int
     var leste_inf_cent_meia = 50 * entrada_meia
     var leste_inf_cent_total = leste_inf_cent_int + leste_inf_cent_meia
+
     var leste_inf_lat_int = 80 * entrada_int
     var leste_inf_lat_meia = 40 * entrada_meia
     var leste_inf_lat_total = leste_inf_lat_int + leste_inf_lat_meia
+
     var sul_int = 40 * entrada_int
     var sul_meia = 20 * entrada_meia
     var sul_total = sul_int + sul_meia
@@ -417,48 +444,60 @@
     div_dados_e_total.style.display = 'none'
   }
 
+
+  function login() {
+    div_login_usuario.style.display = 'flex';
+    div_info_usuario.style.display = 'none';
+  }
+
+  function voltar_info_usuario() {
+    div_login_usuario.style.display = 'none';
+    div_info_usuario.style.display = 'flex';
+
+  }
+
   function cadastrar() {
-        var nomeVar = input_nome.value;
-        var emailVar = input_email.value;
-        var cpfVar = input_cpf.value;
-        var telefoneVar = input_telefone.value;
+    var nomeVar = input_nome.value;
+    var emailVar = input_email.value;
+    var cpfVar = input_cpf.value;
+    var telefoneVar = input_telefone.value;
 
-        if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "") {
-           alert("Preencha todos os campos")
-        }
-        else {
-          alert("Dados confirmados")
-        }
-
-        fetch("/usuarios  /cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                cpfServer: cpfVar,
-                telefoneServer: telefoneVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                setTimeout(() => {
-                    window.location = "../index.html";
-                }, "2000")
-                
-                limparFormulario();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-
-        return false;
+    if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "") {
+      alert("Preencha todos os campos")
     }
+    else {
+      alert("Dados confirmados")
+    }
+
+    fetch("/usuarios  /cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        cpfServer: cpfVar,
+        telefoneServer: telefoneVar
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        setTimeout(() => {
+          window.location = "../index.html";
+        }, "2000")
+
+        limparFormulario();
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
+  }
 
 </script>
