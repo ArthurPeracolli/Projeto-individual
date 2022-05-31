@@ -130,11 +130,11 @@
             <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario"
               placeholder="Insira o seu Telefone" id="input_telefone"> <br>
             <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu CPF" id="input_cpf"> <br>
+              placeholder="Insira o seu CPF" id="input_cpf_cadastro"> <br>
             <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario"
-              placeholder="Insira o seu e-mail" id="input_email">
+              placeholder="Insira o seu e-mail" id="input_email_cadastro">
             <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
-              placeholder="Insira uma senha" id="input_senha">
+              placeholder="Insira uma senha" id="input_senha_cadastro">
             <span class="span_usuario">Confirmar senha:</span> <input type="password" class="input_usuario"
               placeholder="Confirme sua senha" id="input_confirmar_senha">
             <div class="div_btn_confirmar_dados" id="div_btn_confirmar_dados">
@@ -148,7 +148,7 @@
 
             <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
               placeholder="Insira o seu CPF" id="input_cpf"> <br>
-            <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
+            <span class="span_usuario">Senha:</span> <input type="password" class="input_senha"
               placeholder="Insira o seu e-mail" id="input_email">
             <div class="div_btn_confirmar_dados" id="div_btn_login">
               <button class="btn_comprar" onclick="voltar_info_usuario()">Voltar</button>
@@ -458,46 +458,50 @@
 
   function cadastrar() {
     var nomeVar = input_nome.value;
-    var emailVar = input_email.value;
-    var cpfVar = input_cpf.value;
+    var emailVar = input_email_cadastro.value;
+    var cpfVar = input_cpf_cadastro.value;
     var telefoneVar = input_telefone.value;
+    var senhaVar = input_senha_cadastro.value;
+    var confirmarSenhaVar = input_confirmar_senha.value;
 
-    if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "") {
+    if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
       alert("Preencha todos os campos")
     }
     else {
-      alert("Dados confirmados")
+
+
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          cpfServer: cpfVar,
+          telefoneServer: telefoneVar,
+          senhaServer: senhaVar,
+
+        })
+      }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert("Dados confirmados")
+          setTimeout(() => {
+            window.location = "../index.html";
+          }, "2000")
+
+          limparFormulario();
+        } else {
+          throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+      return false;
     }
-
-    fetch("/usuarios  /cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        cpfServer: cpfVar,
-        telefoneServer: telefoneVar
-      })
-    }).then(function (resposta) {
-
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        setTimeout(() => {
-          window.location = "../index.html";
-        }, "2000")
-
-        limparFormulario();
-      } else {
-        throw ("Houve um erro ao tentar realizar o cadastro!");
-      }
-    }).catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-    });
-
-    return false;
   }
-
 </script>
