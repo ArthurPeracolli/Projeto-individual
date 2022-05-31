@@ -148,11 +148,11 @@
 
             <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
               placeholder="Insira o seu CPF" id="input_cpf"> <br>
-            <span class="span_usuario">Senha:</span> <input type="password" class="input_senha"
-              placeholder="Insira o seu e-mail" id="input_email">
+            <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
+              placeholder="Insira o sua senha" id="input_senha">
             <div class="div_btn_confirmar_dados" id="div_btn_login">
               <button class="btn_comprar" onclick="voltar_info_usuario()">Voltar</button>
-              <button class="btn_comprar">Login</button>
+              <button class="btn_comprar" onclick="entrar()">Login</button>
             </div>
           </div>
 
@@ -490,7 +490,8 @@
         if (resposta.ok) {
           alert("Dados confirmados")
           setTimeout(() => {
-            window.location = "../index.html";
+            div_login_usuario.style.display = 'flex';
+            div_info_usuario.style.display = 'none';  ;
           }, "2000")
 
           limparFormulario();
@@ -502,6 +503,67 @@
       });
 
       return false;
+    }
+  }
+
+  function entrar() {
+        var cpfVar = input_cpf.value;
+        var senhaVar = input_senha.value;
+
+        if (cpfVar == "" || senhaVar == "") {
+            alert ("Preencha todos os campos para prosseguir!");
+            return false;
+        }
+        
+        //else if (cpfVar.indexOf() != 7) {
+          //  alert ("Ops, e-mail inválido! Verifique e tente novamente.");
+            //return false;
+     //   }
+        else {     
+        console.log("FORM LOGIN: ", cpfVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                cpfServer: cpfVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.CPF_USUARIO = json.cpf;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                });
+                setTimeout(() => {
+            window.location = "../index.html";
+          }, "2000")
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
   }
 </script>
