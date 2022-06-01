@@ -340,7 +340,7 @@ h4 {
   border: 2px solid #ffffff;
 }
 
-.btn_comprar {
+.btn_div_usuario {
   height: 5vh;
   width: 10vw;
   display: flex;
@@ -356,7 +356,7 @@ h4 {
   transition: 0.3s;
 }
 
-.btn_comprar:hover {
+.btn_div_usuario:hover {
   background-color: #000000;
   color: #F9FCF8;
   border: 2px solid #ffffff;

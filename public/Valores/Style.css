@@ -138,15 +138,16 @@ body {
   }
 
 .banner {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .banner .container {
+  margin-top: 9vh;
+  margin-bottom: 9vh;
     background-color: black;
-    height: 90vh;
+    height: 110vh;
     width: 80%;
     border-radius: 12px;
     display: flex;
@@ -162,6 +163,7 @@ h1 {
 
 p {
     color: #ffffff;
+    font-size: 2.7vh;
 }
 
 .div_text {
@@ -171,4 +173,11 @@ p {
 
 .img_vo {
     width: 25vw;
+}
+
+.div_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
 }

@@ -282,98 +282,6 @@ html {
   color: #fff;
 }
 
-.grafico_jogador_fagner {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_gil {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_joao_victor {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_fabio_santos {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_maycon {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_paulinho {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_renato_augusto {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-
-.grafico_jogador_roger_guedes {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-
-.grafico_jogador_jo {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
-.grafico_jogador_willian {
-  display: none;
-  position: relative;
-  height: 23vh;
-  width: 23vw;
-  font-weight: bolder;
-  color: #fff;
-}
-
 .icon {
   border-radius: 10px;
 }
@@ -393,23 +301,18 @@ html, body {
 
 @keyframes display {
   0% {
-    transform: translateX(200px);
     opacity: 0;
   }
   10% {
-    transform: translateX(0);
     opacity: 1;
   }
   20% {
-    transform: translateX(0);
     opacity: 1;
   }
   30% {
-    transform: translateX(-200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(-200px);
     opacity: 0;
   }
 }
@@ -422,7 +325,7 @@ html, body {
   position: absolute;
   top: 0;
   opacity: 0;
-  animation: display 25s infinite;
+  animation: display 25s infinite ease-out;
   height: 89vh;
   width: 100%;
   display: flex;
