@@ -304,6 +304,7 @@
     img_acessibilidade.style.display = 'none'
     img_setores.style.display = 'flex'
   }
+var total = 0
 
   function comprar() {
     var entrada_int = Number(select_entrada_int.value)
@@ -364,14 +365,15 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${oeste_superior_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${oeste_superior_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = oeste_superior_total
           break;
         case 2:
           span_qtd_total_inteira.innerHTML = entrada_int
           span_total_inteira.innerHTML = `${business_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${business_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${business_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = business_total
           break;
         case 3:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -379,6 +381,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${camarote_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${camarote_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = camarote_total
           break;
         case 4:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -386,6 +389,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${minha_cadeira_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${minha_cadeira_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = minha_cadeira_total
           break;
         case 5:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -393,6 +397,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${norte_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${norte_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = norte_total
           break;
         case 6:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -400,6 +405,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = leste_sup_cent_total
           break;
         case 7:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -407,6 +413,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = leste_sup_cent_total
           break;
         case 8:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -414,6 +421,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${leste_inf_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${leste_inf_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = leste_inf_cent_total
           break;
         case 9:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -421,6 +429,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${leste_inf_lat_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${leste_inf_lat_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = leste_inf_lat_total
           break;
         case 10:
           span_qtd_total_inteira.innerHTML = entrada_int
@@ -428,6 +437,7 @@
           span_qtd_total_meia.innerHTML = entrada_meia
           span_total_meia.innerHTML = `${sul_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
           span_total.innerHTML = `${sul_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
+          total = sul_total
           break;
       }
 

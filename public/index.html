@@ -1,4 +1,4 @@
-z<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,11 @@ z<!DOCTYPE html>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="Metricas_jogadores.js" />
-    <link rel="icon" href="imgs/icon.png" class="icon" />
+    <link
+      rel="icon"
+      href="Header_Footer/imgs/Corinthians-Logo.png"
+      class="icon"
+    />
   </head>
 
   <body>
@@ -26,11 +30,16 @@ z<!DOCTYPE html>
           </li>
           <li><a href="Ingresso/Ingresso.html"> Ingressos</a></li>
           <li><a href="Idolos/Idolos.html">Idolos</a></li>
-          <li>Notícias</li>
+          <li><a href="Valores/Valores.html">Valores</a></li>
         </ul>
       </div>
     </header>
-    <div class="banner">
+    <div class="pic-ctn">
+      <img src="imgs/ronaldo gif.gif" class="pic" />
+      <img src="imgs/socrates1.gif" class="pic" />
+      <img src="imgs/basilio7.gif" class="pic" />
+      <img src="imgs/marcelineocarioca3.gif" class="pic" />
+      <img src="imgs/basilio7.gif" class="pic" />
       <div class="corimba1">
         <li class="text_banner1">Pelo</li>
         <li class="text_banner2">Corinthians</li>
@@ -39,36 +48,39 @@ z<!DOCTYPE html>
         <li class="text_banner5">amor.</li>
       </div>
     </div>
-    <div class="corimba2">
-      <h1 class="titulo_elenco">Elenco:</h1>
-      <div class="div_btn">
-        <button class="btn_prev" onclick="btn_prev()" id="btn_prev">
-          <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
-        </button>
-        <button class="btn_next" onclick="btn_next()"  id="btn_next">
-          <img src="imgs/icons8-duplo-para-a-direita-16.png" />
-        </button>
-      </div>
-      <div class="div_jogador">
-        <div>
-          <img
-            class="img_elenco_cassio"
-            src="imgs/Cassio.png"
-            id="img_jogador"
-          />
-          <br />
-          <div>
-            <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
-            <span class="posicao_elenco"
-              >Posição:
-              <span id="posicao_jogador"> Goleiro </span>
-            </span>
-            <br />
-            <span class="idade_elenco" id="idade_jogador">33 Anos</span>
-          </div>
+
+    <div class="container_bloco_2">
+      <div class="corimba2">
+        <h1 class="titulo_elenco">Elenco:</h1>
+        <div class="div_btn">
+          <button class="btn_prev" onclick="btn_prev()" id="btn_prev">
+            <img src="imgs/icons8-duplo-para-a-esquerda-16.png" />
+          </button>
+          <button class="btn_next" onclick="btn_next()" id="btn_next">
+            <img src="imgs/icons8-duplo-para-a-direita-16.png" />
+          </button>
         </div>
-        <div id="div_canvas">
-          <canvas id="chart" class="grafico_jogador_cassio"></canvas>
+        <div class="div_jogador">
+          <div>
+            <img
+              class="img_elenco_cassio"
+              src="imgs/Cassio.png"
+              id="img_jogador"
+            />
+            <br />
+            <div>
+              <b class="nome_elenco" id="nome_jogador"> Cassio </b> <br />
+              <span class="posicao_elenco"
+                >Posição:
+                <span id="posicao_jogador"> Goleiro </span>
+              </span>
+              <br />
+              <span class="idade_elenco" id="idade_jogador">33 Anos</span>
+            </div>
+          </div>
+          <div id="div_canvas">
+            <canvas id="chart" class="grafico_jogador_cassio"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -149,7 +161,6 @@ z<!DOCTYPE html>
     if (jogador > 0) {
       jogador--;
       change_player();
-
     }
   }
 

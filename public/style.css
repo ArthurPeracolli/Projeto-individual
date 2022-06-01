@@ -22,8 +22,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: fixed;
   top: 0;
   width: 100%; 
 }
@@ -139,20 +137,7 @@ html {
   cursor: pointer;
 }
 
-.banner {
-  height: 88vh;
-  width: 100%;
-  background-image: url("imgs/ronaldo\ gif.gif");
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-size: cover;
-  margin-top: 9vh;
-}
-
 .corimba1 {
-  width: 25%;
-  height: 85%;
   color: #fff;
   font-size: 15vh;
   display: flex;
@@ -162,12 +147,15 @@ html {
   align-items: center;
   flex-direction: column;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.84);
+  position: absolute;
+  z-index: 10;
+  margin-left: 25vw;
 }
 
 .text_banner1 {
   text-indent: -33vw;
   color: #282828;
-
+  cursor: default;
 }
 
 .text_banner1:hover {
@@ -177,6 +165,7 @@ html {
 
 .text_banner2 {
   text-indent: -20vw;
+  cursor: default;
 }
 
 .text_banner2:hover {
@@ -187,6 +176,7 @@ html {
 .text_banner3 {
   text-indent: -7vw;
   color: #282828;
+  cursor: default;
 
 }
 
@@ -197,6 +187,7 @@ html {
 
 .text_banner4 {
   text-indent: 15vw;
+  cursor: default;
 }
 
 .text_banner4:hover {
@@ -207,6 +198,7 @@ html {
 .text_banner5 {
   text-indent: 33vw;
   color: #282828;
+  cursor: default;
 
 }
 
@@ -384,4 +376,74 @@ html {
 
 .icon {
   border-radius: 10px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.pic-ctn {
+  width: 100vw;
+  height: 200px;
+  z-index: 0;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: display 25s infinite;
+  height: 89vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-size: cover;
+}
+
+img:nth-child(2) {
+  animation-delay: 5s;
+}
+img:nth-child(3) {
+  animation-delay: 10s;
+}
+img:nth-child(4) {
+  animation-delay: 15s;
+}
+img:nth-child(5) {
+  animation-delay: 20s;
+} 
+
+.container_bloco_2 {
+  margin-top: 59vh;
 }
