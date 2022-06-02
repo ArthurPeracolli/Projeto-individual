@@ -250,6 +250,11 @@ h4 {
   align-self: flex-start;
 }
 
+.titulo_pagamento {
+  align-self: flex-start;
+  display: none;
+}
+
 .btn_localizacao {
   height: 5vh;
   width: 10vw;
@@ -514,4 +519,45 @@ h4 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+}
+
+.qr_code {
+  width: 50%;
+  display: none;
+}
+
+.div_radio_pagamento {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15vh;   
+  justify-content: center;
+  align-items: center;
+
+}
+
+.div_pagamento {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.span_pagamento {
+  font-size: 3vh;
+  font-weight: bolder;
+}
+
+.div_qr_code {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_btn_pagamento {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.boleto {
+  height: 22vh;
+  display: none;
 }

@@ -60,8 +60,9 @@
         </a>
       </div>
     </div>
-    <div class="div_bilheteria">
-      <h1 class="titulo_estadio">Bilheteria</h1>
+    <div class="div_bilheteria" id="div_bilheteria">
+      <h1 class="titulo_estadio" id="titulo_bilheteria">Bilheteria</h1>
+      <h1 class="titulo_pagamento" id="titulo_pagamento">Pagamento</h1>
       <div id="div_select" class="div_block">
         <h3>Escolha o setor:</h3>
         <select id="setor" class="select_setor">
@@ -184,7 +185,32 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="div_pagamento" style="display: none;" id="div_pagamento">
+        <div class="div_pagamento">
+          <div class="div_radio_pagamento" id="div_radio_pagamento">
+            <div class="div_qr_code">
+              <div id="div_qr_code">
+                <input type="radio" onclick="qr_Code()" />
+                <span class="span_pagamento">QR code</span>
+              </div>
+              <img src="Imgs/QR-Code.png" class="qr_code" id="img_qr_code"/>
+            </div>
+            <div class="div_qr_code">
+              <div id="div_boleto">
+                <input type="radio" onclick="boleto()"/>
+                <span class="span_pagamento">Boleto</span>
+              </div>
+              <img src="Imgs/boleto.png" class="boleto" id="img_boleto"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div_btn_pagamento" id="div_btn_pagamento">
+        <button onclick="pagamento()" class="btn_setor" style="display: none;" id="btn_pagamento">
+          Confimar pagamento
+        </button>
       </div>
     </div>
   </div>
@@ -525,10 +551,6 @@ var total = 0
             return false;
         }
         
-        //else if (cpfVar.indexOf() != 7) {
-          //  alert ("Ops, e-mail inválido! Verifique e tente novamente.");
-            //return false;
-     //   }
         else {     
         console.log("FORM LOGIN: ", cpfVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -558,7 +580,11 @@ var total = 0
 
                 });
                 setTimeout(() => {
-            window.location = "../index.html";
+            div_pagamento.style.display = 'Flex';
+            div_login_usuario.style.display = 'none';
+            div_setor3.style.display = 'none';
+            div_total.style.display = 'none';
+            titulo_bilheteria.style.display = 'none'
           }, "2000")
             } else {
                 console.log("Houve um erro ao tentar realizar o login!");
@@ -575,5 +601,22 @@ var total = 0
 
         return false;
     }
+  }
+
+  function qr_Code() {
+    img_qr_code.style.display = 'flex' 
+    titulo_pagamento.style.display = 'flex'
+    div_boleto.style.display = 'none' 
+    btn_pagamento.style.display = 'block'
+    div_total.style.display = 'flex';
+  }
+
+  function boleto() {
+    img_boleto.style.display = 'block'
+    titulo_pagamento.style.display = 'flex'
+    div_qr_code.style.display = 'none' 
+    div_total.style.display = 'flex';
+    btn_pagamento.style.display = 'block'
+    div_radio_pagamento.style.display = 'block'
   }
 </script>
