@@ -325,7 +325,7 @@ html, body {
   position: absolute;
   top: 0;
   opacity: 0;
-  animation: display 25s infinite ease-out;
+  animation: display 30s infinite ease-out;
   height: 89vh;
   width: 100%;
   display: flex;
@@ -335,18 +335,18 @@ html, body {
 }
 
 img:nth-child(2) {
-  animation-delay: 5s;
+  animation-delay: 6s;
 }
 img:nth-child(3) {
-  animation-delay: 10s;
+  animation-delay: 12s;
 }
 img:nth-child(4) {
-  animation-delay: 15s;
+  animation-delay: 18s;
 }
 img:nth-child(5) {
-  animation-delay: 20s;
+  animation-delay: 24s;
 } 
 
 .container_bloco_2 {
-  margin-top: 59vh;
+  margin-top: 68.5vh;
 }
