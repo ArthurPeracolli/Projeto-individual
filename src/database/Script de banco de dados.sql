@@ -4,11 +4,21 @@ use corinthians;
 create table usuario (
 idUsuario int primary key auto_increment,
 nome varchar (50),
-cpf char (8),
-telefone varchar(11),
+cpf char (11),
+telefone char(9),
 email varchar (60),
 senha varchar (40)
 );
+
+create table ingresso (
+    idIngresso int auto_increment,
+    Setor char (2),
+    qtdIngresso int,
+    valorTotal int,
+    fkUsuario int,
+    foreign key (fkUsuario) references usuario (idUsuario),
+    primary key (idIngresso, idUsuario)
+    );
 
 create table vetores(
 idVetor int primary key auto_increment,

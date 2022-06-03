@@ -256,10 +256,16 @@ h4 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
+  background-image: url(imgs/wall-corinthians.jpg);
+  background-size: 110vh;
   margin: 0;
   width: 100%;
   flex-direction: column;
+  overflow: auto;
+}
+
+.div_youtube::-webkit-scrollbar{
+  display: none;
 }
 
 .card_idolo {
@@ -322,6 +328,7 @@ h4 {
 
 .div_biografia {
   width: 80%;
+  /* font-weight: bolder; */
 }
 
 .div_h1_video {
