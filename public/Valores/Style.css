@@ -151,7 +151,7 @@ body {
     width: 80%;
     border-radius: 12px;
     display: flex;
-    align-items: flex-start;   
+    align-items: center;;   
     flex-direction: row; 
     justify-content: space-around;
 }
@@ -167,12 +167,21 @@ p {
 }
 
 .div_text {
+    display: flex;
+    flex-direction: column;
     margin-left: 5vw;
     width: 50%;
+    overflow: auto;
+    height: 88vh;
+}
+.div_text::-webkit-scrollbar{
+  display: none;
 }
 
 .img_vo {
     width: 25vw;
+    height: 40vw;
+    border-radius: 20px;
 }
 
 .div_img {
