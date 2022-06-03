@@ -62,6 +62,40 @@ function cadastrar(req, res) {
     }
 }
 
+function ingresso(req, res) {
+    var total = req.body.totalServer;
+    var ingresso = req.body.ingressosServer;
+    var setor = req.body.setorServer;
+    var id_usuario = req.body.idUsuarioServer;
+
+    if (total == undefined) {
+        res.status(400).send("Seu nome fantasia está undefined!");
+    } else if (ingresso == undefined) {
+        res.status(400).send("Seu cnpj está undefined!");
+    } else if (setor == undefined) {
+        res.status(400).send("Seu telefone está undefined!");
+    } else if (id_usuario == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    }
+     else {
+        usuarioModel.ingresso(total, ingresso, setor, id_usuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 function entrar(req, res) {
     var cpf = req.body.cpfServer;
     var senha = req.body.senhaServer;
@@ -102,5 +136,6 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    entrar
+    entrar,
+    ingresso
 }

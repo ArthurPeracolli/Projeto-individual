@@ -21,6 +21,17 @@ function cadastrar(nome, cpf, telefone, email, senha) {
     return database.executar(instrucao);
 }
 
+function ingresso(total, ingresso, setor, id_usuario) {
+    console.log("ACESSEI A USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", total, ingresso, setor, id_usuario);
+    
+    var instrucao = `
+        INSERT INTO ingresso (Setor, qtdIngresso, valorTotal, fkUsuario) VALUES
+        ('${setor}', '${ingresso}', '${total}', '${id_usuario}');
+    `
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function entrar(cpf, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", cpf, senha)
     var instrucao = `
@@ -33,5 +44,6 @@ function entrar(cpf, senha) {
 module.exports = {
     cadastrar,
     listar,
-    entrar
+    entrar,
+    ingresso
 };

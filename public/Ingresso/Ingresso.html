@@ -242,8 +242,9 @@
 
 
 <script>
+  var setor_escolhido = 0;
   function btn_escolha() {
-    var setor_escolhido = Number(setor.value)
+   setor_escolhido = Number(setor.value)
 
     if (setor_escolhido == 0) {
       alert("Selecione um setor válido")
@@ -261,61 +262,51 @@
           span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
           span_setor_entrada_meia.innerHTML = 'N9 - Oeste Superior';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 40,00';
-          setor = "N9"
           break;
         case 2: span_setor_entrada_int.innerHTML = 'N8 - Business';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 350,00';
           span_setor_entrada_meia.innerHTML = 'N8 - Business';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 175,00';
-          setor = "N8"
           break;
         case 3: span_setor_entrada_int.innerHTML = 'N5/N6 - Camarotes';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 500,00';
           span_setor_entrada_meia.innerHTML = 'N5/N6 - Camarotes';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 250,00';
-          setor = "N5/N6"
           break;
         case 4: span_setor_entrada_int.innerHTML = 'N4 - Minha Cadeira';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 300,00';
           span_setor_entrada_meia.innerHTML = 'N4 - Minha Cadeira';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 150,00';
-          setor = 'N4'
           break;
         case 5: span_setor_entrada_int.innerHTML = 'N4 - Norte';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
           span_setor_entrada_meia.innerHTML = 'N4 - Norte';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 20,00';
-          setor = 'N4'
           break;
         case 6: span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Central';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
           span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Central';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 27,00';
-          setor = 'N6'
           break;
         case 7: span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Lateral';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
           span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Lateral';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 27,00';
-          setor = 'N6'
           break;
         case 8: span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Central';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 100,00';
           span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Central';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 50,00';
-          setor = 'N4'
           break;
         case 9: span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Lateral';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
           span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Lateral';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 40,00';
-          setor = 'N4'
           break;
         case 10: span_setor_entrada_int.innerHTML = 'N4 - Sul';
           span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
           span_setor_entrada_meia.innerHTML = 'N4 - Sul';
           span_valor_meia.innerHTML = 'Meia entrada: R$ 20,00';
-          setor = 'N4'
           break;
       }
     }
@@ -341,13 +332,13 @@
     img_setores.style.display = 'flex'
   }
 var total = 0
-var ingressos = entrada_int + entrada_meia
-var setor = ""
+var entrada_int = 0
+var entrada_meia = 0
 
   function comprar() {
-    var entrada_int = Number(select_entrada_int.value)
-    var entrada_meia = Number(select_entrada_meia.value)
-    var setor_escolhido = Number(setor.value)
+     entrada_int = Number(select_entrada_int.value)
+     entrada_meia = Number(select_entrada_meia.value)
+    setor_escolhido = Number(setor.value)
 
     var oeste_superior_int = 80 * entrada_int
     var oeste_superior_meia = 40 * entrada_meia
@@ -588,7 +579,7 @@ var setor = ""
 
                     sessionStorage.CPF_USUARIO = json.cpf;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                 });
                 setTimeout(() => {
@@ -632,10 +623,61 @@ var setor = ""
   }
 
   function pagamento() {
-    total
-    ingressos
-    setor_escolhido
+    var ingressos = entrada_int + entrada_meia
+    var idUsuarioVar = sessionStorage.ID_USUARIO
+    console.log("ID USUARIO: ", idUsuarioVar)
 
+    if(setor_escolhido == 1) {
+      setor_escolhido = 'N9 - Oeste Superior' 
+    } else if(setor_escolhido == 2) {
+      setor_escolhido = 'N8 - Business'
+    } else if (setor_escolhido == 3) {
+      setor_escolhido = 'N5/N6 - Camarotes'
+    } else if (setor_escolhido == 4) {
+      setor_escolhido = 'N4 - Minha Cadeira'
+    } else if (setor_escolhido == 5) {
+      setor_escolhido = 'N4 - Norte'
+    } else if (setor_escolhido == 6) {
+      setor_escolhido = 'N6 - Leste Superior Central'
+    }  else if (setor_escolhido == 7) {
+      setor_escolhido = 'N6 - Leste Superior Lateral'
+    }  else if (setor_escolhido == 8) {
+      setor_escolhido = 'N4 - Leste Inferior Central'
+    }  else if (setor_escolhido == 9) {
+      setor_escolhido = 'N4 - Leste Inferior Lateral'
+    }  else {
+      setor_escolhido = 'N4 - Sul'
+    }  
+    fetch("/usuarios/ingresso", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          totalServer: total,
+          ingressosServer: ingressos,
+          setorServer: setor_escolhido,
+          idUsuarioServer: idUsuarioVar
+        })
+      }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert("Dados confirmados")
+          setTimeout(() => {
+            window.location.href = './index.html';
+          }, "2000")
+
+          limparFormulario();
+        } else {
+          throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+      return false;
 
   }
 </script>

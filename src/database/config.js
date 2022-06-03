@@ -5,9 +5,9 @@ var sql = require('mssql');
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
     host: "localhost",
-    user: "aluno",
+    user: "root",
     database: "corinthians",
-    password: "sptech",
+    password: "123456",
 };
 
 function executar(instrucao) {
