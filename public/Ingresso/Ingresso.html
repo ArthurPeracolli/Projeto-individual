@@ -1,498 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingressos - Corinthians</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="icon" href="../imgs/icon.png" class="icon" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ingressos - Corinthians</title>
-  <link rel="stylesheet" href="Style.css" />
-  <link rel="icon" href="../imgs/icon.png" class="icon" />
-</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="container logo">
+          <a href="../index.html" class="a_index">
+            <img src="../Header_Footer/imgs/Corinthians-Logo.png  " />
+            <h1>Sport Club Corinthians Paulista</h1>
+          </a>
+        </div>
+        <ul>
+          <li><a href="../Historia/Historia.html">História</a></li>
+          <li><a href="Ingresso.html"> Ingressos</a></li>
+          <li><a href="../Idolos/Idolos.html">Idolos</a></li>
+          <li><a href="../Valores/Valores.html">Valores</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="id_modal" class="modal" style="display: none;">
+      <div id="id_content" class="content">
+        <header class="modalHeader">
+          <h2 id="titleModal">Erro!</h2>
+        </header>
+        <div style="margin: auto" class="container">
+          <p id="erroDesc" style="text-align: center"></p>
+        </div>
 
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="container logo">
-        <a href="../index.html" class="a_index">
-          <img src="../Header_Footer/imgs/Corinthians-Logo.png  " />
+        <footer id="modalBottom" class="modalFooter">
+          <button class="btn-fechar" onclick="fechar()">Fechar</button>
+        </footer>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="div_banner_txt">
+        <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
+        <h4 class="banner_txt2">Venha torcer junto com o bando de loucos.</h4>
+      </div>
+    </div>
+    <div class="estadio">
+      <div class="div_estadio">
+        <h1 class="titulo_estadio">Setores</h1>
+        <h3>Neo Química Arena</h3>
+        <div class="div_span_setores">
+          <ul>
+            <li class="span_setores_acessibilidade" onclick="setores()">
+              SETORES
+            </li>
+            <li class="span_setores_acessibilidade" onclick="acessibilidade()">
+              ACESSIBILIDADE
+            </li>
+          </ul>
+        </div>
+        <img
+          src="Imgs/34-setores-m.jpg"
+          class="img_estadio_setores"
+          id="img_setores"
+        />
+        <img
+          src="Imgs/Acessibilidade.jpg"
+          class="img_estadio_acessibilibade"
+          id="img_acessibilidade"
+        />
+        <div class="div_btn_setores_acessibilidade">
+          <a
+            href="https://www.google.com/maps/d/viewer?hl=pt-BR&hl=pt-BR&mid=1wdLui34g4OCwicyv8wAx_sjETMI&ll=-23.54476975478073%2C-46.4748609216645&z=16"
+            target="_blank"
+            class="a_localizacao"
+          >
+            <button class="btn_localizacao">Estacionamento</button>
+          </a>
+          <a
+            href="https://www.google.com.br/maps/dir//Arena+Corinthians/@-23.554582,-46.4746486,1348a,20y,41.16t/data=!3m2!1e3!5s0x94ce66de952b5e23:0x3333a57070620b93!4m8!4m7!1m0!1m5!1m1!1s0x0:0xf2b061ffbcd2ecf8!2m2!1d-46.4742676!2d-23.5453221"
+            target="_blank"
+            class="a_localizacao"
+          >
+            <button class="btn_localizacao">Localização</button>
+          </a>
+        </div>
+      </div>
+      <div class="div_bilheteria" id="div_bilheteria">
+        <h1 class="titulo_estadio" id="titulo_bilheteria">Bilheteria</h1>
+        <h1 class="titulo_pagamento" id="titulo_pagamento">Pagamento</h1>
+        <div id="div_select" class="div_block">
+          <h3>Escolha o setor:</h3>
+          <select id="setor" class="select_setor">
+            <option value="0">Selecione o setor</option>
+            <option value="1">N9 - Oeste superior</option>
+            <option value="2">N8 - Bussiness</option>
+            <option value="3">N5/N6 - Camarotes</option>
+            <option value="4">N4 - Minha Cadeira</option>
+            <option value="5">N4 - Norte</option>
+            <option value="6">N6 - Leste Superior Central</option>
+            <option value="7">N6 - Leste Superior Lateral</option>
+            <option value="8">N4 - Leste Inferior Central</option>
+            <option value="9">N4 - Leste Inferior Lateral</option>
+            <option value="10">N4 - Sul</option>
+          </select>
+          <button onclick="btn_escolha()" class="btn_setor">
+            Confimar setor
+          </button>
+        </div>
+        <div class="div_entrada_inteira" style="display: none" id="div_setor">
+          <div>
+            <span
+              class="span_entrada_inteira"
+              id="span_setor_entrada_int"
+            ></span>
+            <br />
+            <span class="span_preco_entrada_int" id="span_valor_int"></span>
+          </div>
+          <select id="select_entrada_int" class="select_entrada_inteira">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <div class="div_entrada_inteira" style="display: none" id="div_setor2">
+          <div>
+            <span
+              class="span_entrada_inteira"
+              id="span_setor_entrada_meia"
+            ></span>
+            <br />
+            <span class="span_preco_entrada_int" id="span_valor_meia"></span>
+          </div>
+          <select id="select_entrada_meia" class="select_entrada_inteira">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <div class="div_btn">
+          <button
+            style="display: none"
+            id="btn_voltar"
+            class="btn_div_usuario"
+            onclick="voltar()"
+          >
+            Voltar
+          </button>
+          <button
+            style="display: none"
+            id="btn_comprar"
+            class="btn_div_usuario"
+            onclick="comprar()"
+          >
+            Comprar
+          </button>
+        </div>
+        <div class="div_dados_e_total" id="div_dados_e_total">
+          <div class="div_dados_usuario" style="display: none" id="div_setor3">
+            <h2>Insira os seus dados:</h2>
+            <div class="div_info_usuario" id="div_info_usuario">
+              <span class="span_usuario">Nome:</span>
+              <input
+                type="text"
+                class="input_usuario"
+                placeholder="Insira o seu nome"
+                id="input_nome"
+              />
+              <br />
+              <span class="span_usuario">Telefone:</span>
+              <input
+                type="number"
+                class="input_usuario"
+                placeholder="Insira o seu Telefone"
+                id="input_telefone"
+              />
+              <br />
+              <span class="span_usuario">CPF:</span>
+              <input
+                type="number"
+                class="input_usuario"
+                placeholder="Insira o seu CPF"
+                id="input_cpf_cadastro"
+              />
+              <br />
+              <span class="span_usuario">E-mail:</span>
+              <input
+                type="text"
+                class="input_usuario"
+                placeholder="Insira o seu e-mail"
+                id="input_email_cadastro"
+              />
+              <span class="span_usuario">Senha:</span>
+              <input
+                type="password"
+                class="input_usuario"
+                placeholder="Insira uma senha"
+                id="input_senha_cadastro"
+              />
+              <span class="span_usuario">Confirmar senha:</span>
+              <input
+                type="password"
+                class="input_usuario"
+                placeholder="Confirme sua senha"
+                id="input_confirmar_senha"
+              />
+              <div class="div_btn_confirmar_dados" id="div_btn_confirmar_dados">
+                <button class="btn_div_usuario" onclick="voltar_menu_setor()">
+                  Voltar
+                </button>
+                <button class="btn_div_usuario" onclick="cadastrar()">
+                  Cadastrar
+                </button>
+                <button class="btn_div_usuario" onclick="login()">Login</button>
+              </div>
+            </div>
+
+            <div class="div_login_usuario" id="div_login_usuario">
+              <span class="span_usuario">CPF:</span>
+              <input
+                type="number"
+                class="input_usuario"
+                placeholder="Insira o seu CPF"
+                id="input_cpf"
+              />
+              <br />
+              <span class="span_usuario">Senha:</span>
+              <input
+                type="password"
+                class="input_usuario"
+                placeholder="Insira o sua senha"
+                id="input_senha"
+              />
+              <div class="div_btn_confirmar_dados" id="div_btn_login">
+                <button class="btn_div_usuario" onclick="voltar_info_usuario()">
+                  Voltar
+                </button>
+                <button class="btn_div_usuario" onclick="entrar()">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="div_total" id="div_total">
+            <h2 class="h2_total">Resumo da compra:</h2>
+            <div class="div_span_total">
+              <div class="div_total_meia_e_inteira">
+                <div class="div_tipo_de_ingresso">
+                  <span class="span_total">Tipo de Ingresso:</span>
+                  <span class="span_total" id="span_tipo_ingresso_inteira"
+                    >Inteira</span
+                  >
+                  <br />
+                  <br />
+                  <span class="span_total">Quantidade:</span>
+                  <span class="span_total" id="span_qtd_total_inteira"></span>
+                  <br />
+                  <br />
+                  <span class="span_total">Subtotal inteira:</span>
+                  <span class="span_total" id="span_total_inteira"></span>
+                </div>
+                <div class="div_tipo_de_ingresso2">
+                  <span class="span_total">Tipo de Ingresso:</span>
+                  <span class="span_total" id="span_tipo_ingresso_meia"
+                    >Meia</span
+                  >
+                  <br />
+                  <br />
+                  <span class="span_total">Quantidade:</span>
+                  <span class="span_total" id="span_qtd_total_meia"></span>
+                  <br />
+                  <br />
+                  <span class="span_total">Subtotal meia:</span>
+                  <span class="span_total" id="span_total_meia"></span>
+                </div>
+                <div class="div_totalidade">
+                  <span class="span_valor_final">Valor total:</span>
+                  <span class="span_valor_final" id="span_total"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div_pagamento" style="display: none" id="div_pagamento">
+          <div class="div_pagamento">
+            <div class="div_radio_pagamento" id="div_radio_pagamento">
+              <div class="div_qr_code">
+                <div id="div_qr_code">
+                  <input type="radio" onclick="qr_Code()" />
+                  <span class="span_pagamento">QR code</span>
+                </div>
+                <img src="Imgs/QR-Code.png" class="qr_code" id="img_qr_code" />
+              </div>
+              <div class="div_qr_code">
+                <div id="div_boleto">
+                  <input type="radio" onclick="boleto()" />
+                  <span class="span_pagamento">Boleto</span>
+                </div>
+                <div class="div_espaco_boleto">
+                  <img src="Imgs/boleto.png" class="boleto" id="img_boleto" />
+                  <div class="div_intrucao" id="div_instrucao"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div_btn_pagamento" id="div_btn_pagamento">
+          <button
+            onclick="pagamento()"
+            class="btn_setor"
+            style="display: none"
+            id="btn_pagamento"
+          >
+            Confimar pagamento
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="container logo">
           <h1>Sport Club Corinthians Paulista</h1>
-        </a>
-      </div>
-      <ul>
-        <li><a href="../Historia/Historia.html">História</a></li>
-        <li><a href="Ingresso.html"> Ingressos</a></li>
-        <li> <a href="../Idolos/Idolos.html">Idolos</a></li>
-        <li><a href="../Valores/Valores.html">Valores</a></li>
-      </ul>
-    </div>
-  </header>
-  <div class="banner">
-    <div class="div_banner_txt">
-      <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
-      <h4 class="banner_txt2">Venha torcer junto com o bando de loucos.</h4>
-    </div>
-  </div>
-  <div class="estadio">
-    <div class="div_estadio">
-      <h1 class="titulo_estadio">Setores</h1>
-      <h3>Neo Química Arena</h3>
-      <div class="div_span_setores">
-        <ul>
-          <li class="span_setores_acessibilidade" onclick="setores()">SETORES</li>
-          <li class="span_setores_acessibilidade" onclick="acessibilidade()">ACESSIBILIDADE</li>
-        </ul>
-      </div>
-      <img src="Imgs/34-setores-m.jpg" class="img_estadio_setores" id="img_setores" />
-      <img src="Imgs/Acessibilidade.jpg" class="img_estadio_acessibilibade" id="img_acessibilidade" />
-      <div class="div_btn_setores_acessibilidade">
-        <a href="https://www.google.com/maps/d/viewer?hl=pt-BR&hl=pt-BR&mid=1wdLui34g4OCwicyv8wAx_sjETMI&ll=-23.54476975478073%2C-46.4748609216645&z=16"
-          target="_blank" class="a_localizacao">
-          <button class="btn_localizacao">
-            Estacionamento
-          </button>
-        </a>
-        <a href="https://www.google.com.br/maps/dir//Arena+Corinthians/@-23.554582,-46.4746486,1348a,20y,41.16t/data=!3m2!1e3!5s0x94ce66de952b5e23:0x3333a57070620b93!4m8!4m7!1m0!1m5!1m1!1s0x0:0xf2b061ffbcd2ecf8!2m2!1d-46.4742676!2d-23.5453221"
-          target="_blank" class="a_localizacao">
-          <button class="btn_localizacao">
-            Localização
-          </button>
-        </a>
-      </div>
-    </div>
-    <div class="div_bilheteria" id="div_bilheteria">
-      <h1 class="titulo_estadio" id="titulo_bilheteria">Bilheteria</h1>
-      <h1 class="titulo_pagamento" id="titulo_pagamento">Pagamento</h1>
-      <div id="div_select" class="div_block">
-        <h3>Escolha o setor:</h3>
-        <select id="setor" class="select_setor">
-          <option value="0">Selecione o setor</option>
-          <option value="1">N9 - Oeste superior</option>
-          <option value="2">N8 - Bussiness</option>
-          <option value="3">N5/N6 - Camarotes</option>
-          <option value="4">N4 - Minha Cadeira</option>
-          <option value="5">N4 - Norte</option>
-          <option value="6">N6 - Leste Superior Central</option>
-          <option value="7">N6 - Leste Superior Lateral</option>
-          <option value="8">N4 - Leste Inferior Central</option>
-          <option value="9">N4 - Leste Inferior Lateral</option>
-          <option value="10">N4 - Sul</option>
-        </select>
-        <button onclick="btn_escolha()" class="btn_setor">Confimar setor</button>
-      </div>
-      <div class="div_entrada_inteira" style="display: none;" id="div_setor">
-        <div>
-          <span class="span_entrada_inteira" id="span_setor_entrada_int"></span> <br />
-          <span class="span_preco_entrada_int" id="span_valor_int"></spa>
         </div>
-        <select id="select_entrada_int" class="select_entrada_inteira">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-      </div>
-      <div class="div_entrada_inteira" style="display: none;" id="div_setor2">
-        <div>
-          <span class="span_entrada_inteira" id="span_setor_entrada_meia"></span> <br />
-          <span class="span_preco_entrada_int" id="span_valor_meia"></span>
+
+        <div class="container middle">
+          <ul>
+            <li>Informação</li>
+            <li>Suporte</li>
+            <li>Termos de uso</li>
+          </ul>
         </div>
-        <select id="select_entrada_meia" class="select_entrada_inteira">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-      </div>
-      <div class="div_btn">
-        <button style="display: none;" id="btn_voltar" class="btn_div_usuario" onclick="voltar()">Voltar</button>
-        <button style="display: none;" id="btn_comprar" class="btn_div_usuario" onclick="comprar()">Comprar</button>
-      </div>
-      <div class="div_dados_e_total" id="div_dados_e_total">
-        <div class="div_dados_usuario" style="display: none;" id="div_setor3">
-          <h2>
-            Insira os seus dados:
-          </h2>
-          <div class="div_info_usuario" id="div_info_usuario">
-            <span class="span_usuario">Nome:</span> <input type="text" class="input_usuario"
-              placeholder="Insira o seu nome" id="input_nome"> <br>
-            <span class="span_usuario">Telefone:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu Telefone" id="input_telefone"> <br>
-            <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu CPF" id="input_cpf_cadastro"> <br>
-            <span class="span_usuario">E-mail:</span> <input type="text" class="input_usuario"
-              placeholder="Insira o seu e-mail" id="input_email_cadastro">
-            <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
-              placeholder="Insira uma senha" id="input_senha_cadastro">
-            <span class="span_usuario">Confirmar senha:</span> <input type="password" class="input_usuario"
-              placeholder="Confirme sua senha" id="input_confirmar_senha">
-            <div class="div_btn_confirmar_dados" id="div_btn_confirmar_dados">
-              <button class="btn_div_usuario" onclick="voltar_menu_setor()">Voltar</button>
-              <button class="btn_div_usuario" onclick="cadastrar()">Cadastrar</button>
-              <button class="btn_div_usuario" onclick="login()">Login</button>
-            </div>
-          </div>
 
-          <div class="div_login_usuario" id="div_login_usuario">
-
-            <span class="span_usuario">CPF:</span> <input type="number" class="input_usuario"
-              placeholder="Insira o seu CPF" id="input_cpf"> <br>
-            <span class="span_usuario">Senha:</span> <input type="password" class="input_usuario"
-              placeholder="Insira o sua senha" id="input_senha">
-            <div class="div_btn_confirmar_dados" id="div_btn_login">
-              <button class="btn_div_usuario" onclick="voltar_info_usuario()">Voltar</button>
-              <button class="btn_div_usuario" onclick="entrar()">Login</button>
-            </div>
-          </div>
-
-        </div>
-        <div class="div_total" id="div_total">
-          <h2 class="h2_total">Resumo da compra:</h2>
-          <div class="div_span_total">
-            <div class="div_total_meia_e_inteira">
-              <div class="div_tipo_de_ingresso">
-                <span class="span_total">Tipo de Ingresso:</span>
-                <span class="span_total" id="span_tipo_ingresso_inteira">Inteira</span> <br> <br>
-                <span class="span_total">Quantidade:</span>
-                <span class="span_total" id="span_qtd_total_inteira"></span> <br> <br>
-                <span class="span_total">Subtotal inteira:</span>
-                <span class="span_total" id="span_total_inteira"></span>
-              </div>
-              <div class="div_tipo_de_ingresso2">
-                <span class="span_total">Tipo de Ingresso:</span>
-                <span class="span_total" id="span_tipo_ingresso_meia">Meia</span> <br> <br>
-                <span class="span_total">Quantidade:</span>
-                <span class="span_total" id="span_qtd_total_meia"></span> <br> <br>
-                <span class="span_total">Subtotal meia:</span>
-                <span class="span_total" id="span_total_meia"></span>
-              </div>
-              <div class="div_totalidade">
-                <span class="span_valor_final">Valor total:</span>
-                <span class="span_valor_final" id="span_total"></span>
-              </div>
-            </div>
-          </div>
+        <div class="container socials">
+          <img src="../Header_Footer/imgs/instagram.png" alt="" />
+          <img src="../Header_Footer/imgs/facebook.png" alt="" />
+          <img src="../Header_Footer/imgs/linkedin.png" alt="" />
         </div>
       </div>
-
-      <div class="div_pagamento" style="display: none;" id="div_pagamento">
-        <div class="div_pagamento">
-          <div class="div_radio_pagamento" id="div_radio_pagamento">
-            <div class="div_qr_code">
-              <div id="div_qr_code">
-                <input type="radio" onclick="qr_Code()" />
-                <span class="span_pagamento">QR code</span>
-              </div>
-              <img src="Imgs/QR-Code.png" class="qr_code" id="img_qr_code"/>
-            </div>
-            <div class="div_qr_code">
-              <div id="div_boleto">
-                <input type="radio" onclick="boleto()"/>
-                <span class="span_pagamento">Boleto</span>
-              </div>
-              <img src="Imgs/boleto.png" class="boleto" id="img_boleto"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="div_btn_pagamento" id="div_btn_pagamento">
-        <button onclick="pagamento()" class="btn_setor" style="display: none;" id="btn_pagamento">
-          Confimar pagamento
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="container logo">
-        <h1>Sport Club Corinthians Paulista</h1>
-      </div>
-
-      <div class="container middle">
-        <ul>
-          <li>Informação</li>
-          <li>Suporte</li>
-          <li>Termos de uso</li>
-        </ul>
-      </div>
-
-      <div class="container socials">
-        <img src="../Header_Footer/imgs/instagram.png" alt="" />
-        <img src="../Header_Footer/imgs/facebook.png" alt="" />
-        <img src="../Header_Footer/imgs/linkedin.png" alt="" />
-      </div>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
-
 
 <script>
   var setor_escolhido = 0;
   function btn_escolha() {
-   setor_escolhido = Number(setor.value)
+    setor_escolhido = Number(setor.value);
 
     if (setor_escolhido == 0) {
-      alert("Selecione um setor válido")
-    }
-
-    else {
-      div_select.style.display = 'none';
-      div_setor.style.display = 'flex';
-      div_setor2.style.display = 'flex';
-      btn_comprar.style.display = 'flex';
-      btn_voltar.style.display = 'flex';
+      erroDesc.innerHTML = "Escolha um setor para continuar.";
+      id_modal.style.display = "flex";
+    } else {
+      div_select.style.display = "none";
+      div_setor.style.display = "flex";
+      div_setor2.style.display = "flex";
+      btn_comprar.style.display = "flex";
+      btn_voltar.style.display = "flex";
 
       switch (setor_escolhido) {
-        case 1: span_setor_entrada_int.innerHTML = 'N9 - Oeste Superior';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
-          span_setor_entrada_meia.innerHTML = 'N9 - Oeste Superior';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 40,00';
+        case 1:
+          span_setor_entrada_int.innerHTML = "N9 - Oeste Superior";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 80,00";
+          span_setor_entrada_meia.innerHTML = "N9 - Oeste Superior";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 40,00";
           break;
-        case 2: span_setor_entrada_int.innerHTML = 'N8 - Business';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 350,00';
-          span_setor_entrada_meia.innerHTML = 'N8 - Business';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 175,00';
+        case 2:
+          span_setor_entrada_int.innerHTML = "N8 - Business";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 350,00";
+          span_setor_entrada_meia.innerHTML = "N8 - Business";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 175,00";
           break;
-        case 3: span_setor_entrada_int.innerHTML = 'N5/N6 - Camarotes';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 500,00';
-          span_setor_entrada_meia.innerHTML = 'N5/N6 - Camarotes';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 250,00';
+        case 3:
+          span_setor_entrada_int.innerHTML = "N5/N6 - Camarotes";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 500,00";
+          span_setor_entrada_meia.innerHTML = "N5/N6 - Camarotes";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 250,00";
           break;
-        case 4: span_setor_entrada_int.innerHTML = 'N4 - Minha Cadeira';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 300,00';
-          span_setor_entrada_meia.innerHTML = 'N4 - Minha Cadeira';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 150,00';
+        case 4:
+          span_setor_entrada_int.innerHTML = "N4 - Minha Cadeira";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 300,00";
+          span_setor_entrada_meia.innerHTML = "N4 - Minha Cadeira";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 150,00";
           break;
-        case 5: span_setor_entrada_int.innerHTML = 'N4 - Norte';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
-          span_setor_entrada_meia.innerHTML = 'N4 - Norte';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 20,00';
+        case 5:
+          span_setor_entrada_int.innerHTML = "N4 - Norte";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 40,00";
+          span_setor_entrada_meia.innerHTML = "N4 - Norte";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 20,00";
           break;
-        case 6: span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Central';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
-          span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Central';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 27,00';
+        case 6:
+          span_setor_entrada_int.innerHTML = "N6 - Leste Superior Central";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 54,00";
+          span_setor_entrada_meia.innerHTML = "N6 - Leste Superior Central";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 27,00";
           break;
-        case 7: span_setor_entrada_int.innerHTML = 'N6 - Leste Superior Lateral';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 54,00';
-          span_setor_entrada_meia.innerHTML = 'N6 - Leste Superior Lateral';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 27,00';
+        case 7:
+          span_setor_entrada_int.innerHTML = "N6 - Leste Superior Lateral";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 54,00";
+          span_setor_entrada_meia.innerHTML = "N6 - Leste Superior Lateral";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 27,00";
           break;
-        case 8: span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Central';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 100,00';
-          span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Central';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 50,00';
+        case 8:
+          span_setor_entrada_int.innerHTML = "N4 - Leste Inferior Central";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 100,00";
+          span_setor_entrada_meia.innerHTML = "N4 - Leste Inferior Central";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 50,00";
           break;
-        case 9: span_setor_entrada_int.innerHTML = 'N4 - Leste Inferior Lateral';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 80,00';
-          span_setor_entrada_meia.innerHTML = 'N4 - Leste Inferior Lateral';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 40,00';
+        case 9:
+          span_setor_entrada_int.innerHTML = "N4 - Leste Inferior Lateral";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 80,00";
+          span_setor_entrada_meia.innerHTML = "N4 - Leste Inferior Lateral";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 40,00";
           break;
-        case 10: span_setor_entrada_int.innerHTML = 'N4 - Sul';
-          span_valor_int.innerHTML = 'Entrada inteira: R$ 40,00';
-          span_setor_entrada_meia.innerHTML = 'N4 - Sul';
-          span_valor_meia.innerHTML = 'Meia entrada: R$ 20,00';
+        case 10:
+          span_setor_entrada_int.innerHTML = "N4 - Sul";
+          span_valor_int.innerHTML = "Entrada inteira: R$ 40,00";
+          span_setor_entrada_meia.innerHTML = "N4 - Sul";
+          span_valor_meia.innerHTML = "Meia entrada: R$ 20,00";
           break;
       }
     }
   }
 
   function voltar() {
-    div_select.style.display = 'block';
-    div_setor.style.display = 'none';
-    div_setor2.style.display = 'none';
-    div_setor3.style.display = 'none';
-    btn_comprar.style.display = 'none';
-    btn_voltar.style.display = 'none';
-
+    div_select.style.display = "block";
+    div_setor.style.display = "none";
+    div_setor2.style.display = "none";
+    div_setor3.style.display = "none";
+    btn_comprar.style.display = "none";
+    btn_voltar.style.display = "none";
   }
 
   function acessibilidade() {
-    img_acessibilidade.style.display = 'flex'
-    img_setores.style.display = 'none'
+    img_acessibilidade.style.display = "flex";
+    img_setores.style.display = "none";
   }
 
   function setores() {
-    img_acessibilidade.style.display = 'none'
-    img_setores.style.display = 'flex'
+    img_acessibilidade.style.display = "none";
+    img_setores.style.display = "flex";
   }
-var total = 0
-var entrada_int = 0
-var entrada_meia = 0
+  var total = 0;
+  var entrada_int = 0;
+  var entrada_meia = 0;
 
   function comprar() {
-     entrada_int = Number(select_entrada_int.value)
-     entrada_meia = Number(select_entrada_meia.value)
-    setor_escolhido = Number(setor.value)
+    entrada_int = Number(select_entrada_int.value);
+    entrada_meia = Number(select_entrada_meia.value);
+    setor_escolhido = Number(setor.value);
 
-    var oeste_superior_int = 80 * entrada_int
-    var oeste_superior_meia = 40 * entrada_meia
-    var oeste_superior_total = oeste_superior_int + oeste_superior_meia
+    var oeste_superior_int = 80 * entrada_int;
+    var oeste_superior_meia = 40 * entrada_meia;
+    var oeste_superior_total = oeste_superior_int + oeste_superior_meia;
 
-    var business_int = 350 * entrada_int
-    var business_meia = 175 * entrada_meia
-    var business_total = business_int + business_meia
+    var business_int = 350 * entrada_int;
+    var business_meia = 175 * entrada_meia;
+    var business_total = business_int + business_meia;
 
-    var camarote_int = 500 * entrada_int
-    var camarote_meia = 250 * entrada_meia
-    var camarote_total = camarote_int + camarote_meia
+    var camarote_int = 500 * entrada_int;
+    var camarote_meia = 250 * entrada_meia;
+    var camarote_total = camarote_int + camarote_meia;
 
-    var minha_cadeira_int = 300 * entrada_int
-    var minha_cadeira_meia = 150 * entrada_meia
-    var minha_cadeira_total = minha_cadeira_int + minha_cadeira_meia
+    var minha_cadeira_int = 300 * entrada_int;
+    var minha_cadeira_meia = 150 * entrada_meia;
+    var minha_cadeira_total = minha_cadeira_int + minha_cadeira_meia;
 
-    var norte_int = 40 * entrada_int
-    var norte_meia = 20 * entrada_meia
-    var norte_total = norte_int + norte_meia
+    var norte_int = 40 * entrada_int;
+    var norte_meia = 20 * entrada_meia;
+    var norte_total = norte_int + norte_meia;
 
-    var leste_sup_cent_int = 54 * entrada_int
-    var leste_sup_cent_meia = 27 * entrada_meia
-    var leste_sup_cent_total = leste_sup_cent_int + leste_sup_cent_meia
+    var leste_sup_cent_int = 54 * entrada_int;
+    var leste_sup_cent_meia = 27 * entrada_meia;
+    var leste_sup_cent_total = leste_sup_cent_int + leste_sup_cent_meia;
 
-    var leste_inf_cent_int = 100 * entrada_int
-    var leste_inf_cent_meia = 50 * entrada_meia
-    var leste_inf_cent_total = leste_inf_cent_int + leste_inf_cent_meia
+    var leste_inf_cent_int = 100 * entrada_int;
+    var leste_inf_cent_meia = 50 * entrada_meia;
+    var leste_inf_cent_total = leste_inf_cent_int + leste_inf_cent_meia;
 
-    var leste_inf_lat_int = 80 * entrada_int
-    var leste_inf_lat_meia = 40 * entrada_meia
-    var leste_inf_lat_total = leste_inf_lat_int + leste_inf_lat_meia
+    var leste_inf_lat_int = 80 * entrada_int;
+    var leste_inf_lat_meia = 40 * entrada_meia;
+    var leste_inf_lat_total = leste_inf_lat_int + leste_inf_lat_meia;
 
-    var sul_int = 40 * entrada_int
-    var sul_meia = 20 * entrada_meia
-    var sul_total = sul_int + sul_meia
+    var sul_int = 40 * entrada_int;
+    var sul_meia = 20 * entrada_meia;
+    var sul_total = sul_int + sul_meia;
 
     if (entrada_int == 0 && entrada_meia == 0) {
-      alert("Insira a quantidade de ingressos desejada")
-    }
-    else {
-      div_setor.style.display = 'none';
-      div_setor2.style.display = 'none';
-      btn_comprar.style.display = 'none';
-      btn_voltar.style.display = 'none';
-      div_setor3.style.display = 'flex';
-      div_dados_e_total.style.display = 'flex'
+      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
+      id_modal.style.display = "block";
+    } else {
+      div_setor.style.display = "none";
+      div_setor2.style.display = "none";
+      btn_comprar.style.display = "none";
+      btn_voltar.style.display = "none";
+      div_setor3.style.display = "flex";
+      div_dados_e_total.style.display = "flex";
 
       switch (setor_escolhido) {
         case 1:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${oeste_superior_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${oeste_superior_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${oeste_superior_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = oeste_superior_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${oeste_superior_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${oeste_superior_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${oeste_superior_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = oeste_superior_total;
           break;
         case 2:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${business_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${business_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${business_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = business_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${business_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${business_meia.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_total.innerHTML = `${business_total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          total = business_total;
           break;
         case 3:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${camarote_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${camarote_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${camarote_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = camarote_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${camarote_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${camarote_meia.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_total.innerHTML = `${camarote_total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          total = camarote_total;
           break;
         case 4:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${minha_cadeira_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${minha_cadeira_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${minha_cadeira_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = minha_cadeira_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${minha_cadeira_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${minha_cadeira_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${minha_cadeira_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = minha_cadeira_total;
           break;
         case 5:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${norte_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${norte_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${norte_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = norte_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${norte_int.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${norte_meia.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_total.innerHTML = `${norte_total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          total = norte_total;
           break;
         case 6:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = leste_sup_cent_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = leste_sup_cent_total;
           break;
         case 7:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = leste_sup_cent_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${leste_sup_cent_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${leste_sup_cent_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${leste_sup_cent_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = leste_sup_cent_total;
           break;
         case 8:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${leste_inf_cent_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${leste_inf_cent_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${leste_inf_cent_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = leste_inf_cent_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${leste_inf_cent_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${leste_inf_cent_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${leste_inf_cent_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = leste_inf_cent_total;
           break;
         case 9:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${leste_inf_lat_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${leste_inf_lat_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${leste_inf_lat_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = leste_inf_lat_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${leste_inf_lat_int.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${leste_inf_lat_meia.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          span_total.innerHTML = `${leste_inf_lat_total.toLocaleString(
+            "pt-br",
+            { style: "currency", currency: "BRL" }
+          )}`;
+          total = leste_inf_lat_total;
           break;
         case 10:
-          span_qtd_total_inteira.innerHTML = entrada_int
-          span_total_inteira.innerHTML = `${sul_int.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_qtd_total_meia.innerHTML = entrada_meia
-          span_total_meia.innerHTML = `${sul_meia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          span_total.innerHTML = `${sul_total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`;
-          total = sul_total
+          span_qtd_total_inteira.innerHTML = entrada_int;
+          span_total_inteira.innerHTML = `${sul_int.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_qtd_total_meia.innerHTML = entrada_meia;
+          span_total_meia.innerHTML = `${sul_meia.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          span_total.innerHTML = `${sul_total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}`;
+          total = sul_total;
           break;
       }
-
     }
-
   }
 
   function voltar_menu_setor() {
-    div_setor.style.display = 'flex';
-    div_setor2.style.display = 'flex';
-    btn_comprar.style.display = 'flex';
-    btn_voltar.style.display = 'flex';
-    div_setor3.style.display = 'none';
-    div_dados_e_total.style.display = 'none'
+    div_setor.style.display = "flex";
+    div_setor2.style.display = "flex";
+    btn_comprar.style.display = "flex";
+    btn_voltar.style.display = "flex";
+    div_setor3.style.display = "none";
+    div_dados_e_total.style.display = "none";
   }
 
-
   function login() {
-    div_login_usuario.style.display = 'flex';
-    div_info_usuario.style.display = 'none';
+    div_login_usuario.style.display = "flex";
+    div_info_usuario.style.display = "none";
   }
 
   function voltar_info_usuario() {
-    div_login_usuario.style.display = 'none';
-    div_info_usuario.style.display = 'flex';
-
+    div_login_usuario.style.display = "none";
+    div_info_usuario.style.display = "flex";
   }
 
   function cadastrar() {
@@ -503,16 +714,21 @@ var entrada_meia = 0
     var senhaVar = input_senha_cadastro.value;
     var confirmarSenhaVar = input_confirmar_senha.value;
 
-    if (nomeVar == "" || emailVar == "" || cpfVar == "" || telefoneVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
-      alert("Preencha todos os campos")
-    }
-    else {
-
-
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      cpfVar == "" ||
+      telefoneVar == "" ||
+      senhaVar == "" ||
+      confirmarSenhaVar == ""
+    ) {
+      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
+      id_modal.style.display = "block";
+    } else {
       fetch("/usuarios/cadastrar", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           nomeServer: nomeVar,
@@ -520,164 +736,175 @@ var entrada_meia = 0
           cpfServer: cpfVar,
           telefoneServer: telefoneVar,
           senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
 
+          if (resposta.ok) {
+            erroDesc.innerHTML = "Dados confirmados. Faça login.";
+            id_modal.style.display = "block";
+            setTimeout(() => {
+              div_login_usuario.style.display = "flex";
+              div_info_usuario.style.display = "none";
+            }, "2000");
+
+            limparFormulario();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
         })
-      }).then(function (resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          alert("Dados confirmados")
-          setTimeout(() => {
-            div_login_usuario.style.display = 'flex';
-            div_info_usuario.style.display = 'none';  ;
-          }, "2000")
-
-          limparFormulario();
-        } else {
-          throw ("Houve um erro ao tentar realizar o cadastro!");
-        }
-      }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
 
       return false;
     }
   }
 
   function entrar() {
-        var cpfVar = input_cpf.value;
-        var senhaVar = input_senha.value;
+    var cpfVar = input_cpf.value;
+    var senhaVar = input_senha.value;
 
-        if (cpfVar == "" || senhaVar == "") {
-            alert ("Preencha todos os campos para prosseguir!");
-            return false;
-        }
-        
-        else {     
-        console.log("FORM LOGIN: ", cpfVar);
-        console.log("FORM SENHA: ", senhaVar);
+    if (cpfVar == "" || senhaVar == "") {
+      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
+      id_modal.style.display = "block";
+      return false;
+    } else {
+      console.log("FORM LOGIN: ", cpfVar);
+      console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                cpfServer: cpfVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cpfServer: cpfVar,
+          senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("ESTOU NO THEN DO entrar()!");
 
-            if (resposta.ok) {
-                console.log(resposta);
+          if (resposta.ok) {
+            console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+            resposta.json().then((json) => {
+              console.log(json);
+              console.log(JSON.stringify(json));
 
-                    sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
+              sessionStorage.CPF_USUARIO = json.cpf;
+              sessionStorage.NOME_USUARIO = json.nome;
+              sessionStorage.ID_USUARIO = json.idUsuario;
+            });
+            setTimeout(() => {
+              div_pagamento.style.display = "Flex";
+              div_login_usuario.style.display = "none";
+              div_setor3.style.display = "none";
+              div_total.style.display = "none";
+              titulo_bilheteria.style.display = "none";
+              titulo_pagamento.style.display = "flex";
+            }, "2000");
+          } else {
+            console.log("Houve um erro ao tentar realizar o login!");
 
-                });
-                setTimeout(() => {
-            div_pagamento.style.display = 'Flex';
-            div_login_usuario.style.display = 'none';
-            div_setor3.style.display = 'none';
-            div_total.style.display = 'none';
-            titulo_bilheteria.style.display = 'none'
-            titulo_pagamento.style.display = 'flex'
-          }, "2000")
-            } else {
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
+            resposta.text().then((texto) => {
+              console.error(texto);
+              finalizarAguardar(texto);
+            });
+          }
         })
+        .catch(function (erro) {
+          console.log(erro);
+        });
 
-        return false;
+      return false;
     }
   }
 
   function qr_Code() {
-    img_qr_code.style.display = 'flex' 
-    div_boleto.style.display = 'none' 
-    btn_pagamento.style.display = 'block'
-    div_total.style.display = 'flex';
+    img_qr_code.style.display = "flex";
+    div_boleto.style.display = "none";
+    btn_pagamento.style.display = "block";
+    div_total.style.display = "flex";
+    div_instrucao.style.display = "flex";
+    div_instrucao.innerHTML =
+      "Aponte a camera para o código QR ao lado para realizar o pagamento e confirme no botão a baixo!";
   }
 
   function boleto() {
-    img_boleto.style.display = 'block'
-    div_qr_code.style.display = 'none' 
-    div_total.style.display = 'flex';
-    btn_pagamento.style.display = 'block'
-    div_radio_pagamento.style.display = 'block'
+    img_boleto.style.display = "block";
+    div_qr_code.style.display = "none";
+    div_total.style.display = "flex";
+    btn_pagamento.style.display = "block";
+    div_radio_pagamento.style.display = "block";
+    div_instrucao.style.display = "flex";
+    div_instrucao.innerHTML =
+      "Aponte a camera para o código de barras ao lado para realizar o pagamento e confirme no botão a baixo!";
   }
 
   function pagamento() {
-    var ingressos = entrada_int + entrada_meia
-    var idUsuarioVar = sessionStorage.ID_USUARIO
-    console.log("ID USUARIO: ", idUsuarioVar)
+    var ingressos = entrada_int + entrada_meia;
+    var idUsuarioVar = sessionStorage.ID_USUARIO;
+    console.log("ID USUARIO: ", idUsuarioVar);
 
-    if(setor_escolhido == 1) {
-      setor_escolhido = 'N9 - Oeste Superior' 
-    } else if(setor_escolhido == 2) {
-      setor_escolhido = 'N8 - Business'
+    if (setor_escolhido == 1) {
+      setor_escolhido = "N9 - Oeste Superior";
+    } else if (setor_escolhido == 2) {
+      setor_escolhido = "N8 - Business";
     } else if (setor_escolhido == 3) {
-      setor_escolhido = 'N5/N6 - Camarotes'
+      setor_escolhido = "N5/N6 - Camarotes";
     } else if (setor_escolhido == 4) {
-      setor_escolhido = 'N4 - Minha Cadeira'
+      setor_escolhido = "N4 - Minha Cadeira";
     } else if (setor_escolhido == 5) {
-      setor_escolhido = 'N4 - Norte'
+      setor_escolhido = "N4 - Norte";
     } else if (setor_escolhido == 6) {
-      setor_escolhido = 'N6 - Leste Superior Central'
-    }  else if (setor_escolhido == 7) {
-      setor_escolhido = 'N6 - Leste Superior Lateral'
-    }  else if (setor_escolhido == 8) {
-      setor_escolhido = 'N4 - Leste Inferior Central'
-    }  else if (setor_escolhido == 9) {
-      setor_escolhido = 'N4 - Leste Inferior Lateral'
-    }  else {
-      setor_escolhido = 'N4 - Sul'
-    }  
+      setor_escolhido = "N6 - Leste Superior Central";
+    } else if (setor_escolhido == 7) {
+      setor_escolhido = "N6 - Leste Superior Lateral";
+    } else if (setor_escolhido == 8) {
+      setor_escolhido = "N4 - Leste Inferior Central";
+    } else if (setor_escolhido == 9) {
+      setor_escolhido = "N4 - Leste Inferior Lateral";
+    } else {
+      setor_escolhido = "N4 - Sul";
+    }
     fetch("/usuarios/ingresso", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          totalServer: total,
-          ingressosServer: ingressos,
-          setorServer: setor_escolhido,
-          idUsuarioServer: idUsuarioVar
-        })
-      }).then(function (resposta) {
-
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        totalServer: total,
+        ingressosServer: ingressos,
+        setorServer: setor_escolhido,
+        idUsuarioServer: idUsuarioVar,
+      }),
+    })
+      .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("Dados confirmados")
+          erroDesc.innerHTML = "Dados confirmados.";
+          id_modal.style.display = "block";
           setTimeout(() => {
-            window.location.href = './index.html';
-          }, "2000")
+            window.location.href = "./index.html";
+          }, "2000");
 
           limparFormulario();
         } else {
-          throw ("Houve um erro ao tentar realizar o cadastro!");
+          throw "Houve um erro ao tentar realizar o cadastro!";
         }
-      }).catch(function (resposta) {
+      })
+      .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
 
-      return false;
+    return false;
+  }
 
+  function fechar() {
+    id_modal.style.display = "none"
   }
 </script>
