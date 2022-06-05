@@ -382,7 +382,7 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 8vh;
+  height: 5vh;
 }
 
 .div_span_setores ul {
@@ -412,7 +412,7 @@ h4 {
   color: #ffc242;
   font-weight: bolder;
   cursor: pointer;
-  border-bottom: solid 1px #ffc242;
+  text-decoration: underline;
 }
 
 
