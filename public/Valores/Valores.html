@@ -35,7 +35,11 @@
     <div class="banner">
       <div class="container">
         <div class="div_text">
-          <h1>Da onde veio minha inspiração para o tema:</h1>
+          <h1>
+            <span onclick="inspiracao()">
+              Da onde veio minha inspiração para o tema:</span
+            >
+          </h1>
           <p>
             Uma das maiores inspirações para poder realizar esse projeto, foi o
             meu avô. Benedito Alfredo Peraçolli, foi uma pessoa muito importante
@@ -67,7 +71,11 @@
             essa paixão pelo "Time do Povo" para frente, tornando o Corinthians
             uma das partes mais importantes da minha vida.
           </p>
-          <h1>Como o corinthians está inserido no meu cotidiano:</h1>
+          <h1>
+            <span onclick="cotidiano()"
+              >Como o corinthians está inserido no meu cotidiano:</span
+            >
+          </h1>
           <p>
             O Corinthians está inserido no meu cotidiano desde o momento que eu
             acordo, meu quarto é inteiro decorado com artigos do Corinthians,
@@ -79,7 +87,7 @@
             e nos momentos mais triste, muitas vezes foi uma válvula de escape
             para tudo que estava acontecendo a minha volta.
           </p>
-          <h1>Maior dificuldade e Maior superação do projeto:</h1>
+          <h1> <span onclick="superacao()">Maior dificuldade e Maior superação do projeto:</span></h1>
           <p>
             A maior dificuldade foi pensar em um projeto do zero, pensar em como
             as coisas se encaixariam e como fazer um projeto completo, com todos
@@ -95,7 +103,7 @@
             evolui até aqui, mostrando como o aprendizado da faculdade realmente
             é rápido e acreditável.
           </p>
-          <h1>Agradecimentos:</h1>
+          <h1><span onclick="agradecimento()"> Agradecimentos:</span></h1>
           <p>
             Eu gostaria de agradecer a SPTech primeiramente pela oportunidade de
             estar aqui e realizar este semestre do curso, antes de chegar aqui
@@ -125,6 +133,7 @@
           <img
             src="WhatsApp Image 2022-06-03 at 18.54.47.jpeg"
             class="img_vo"
+            id="img_troca"
           />
         </div>
       </div>
@@ -153,3 +162,21 @@
     </footer>
   </body>
 </html>
+
+<script>
+  function inspiracao() {
+    img_troca.src = "WhatsApp Image 2022-06-03 at 18.54.47.jpeg";
+  }
+
+  function cotidiano() {
+    img_troca.src = "WhatsApp Image 2022-06-04 at 19.33.02.jpeg";
+  }
+
+  function agradecimento() {
+    img_troca.src = "WhatsApp Image 2022-06-03 at 19.52.04.jpeg";
+  }
+
+  function superacao() {
+    img_troca.src = "chartJs.png";
+  }
+</script>
