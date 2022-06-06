@@ -7,6 +7,7 @@
     <title>Ingressos - Corinthians</title>
     <link rel="stylesheet" href="Style.css" />
     <link rel="icon" href="../imgs/icon.png" class="icon" />
+    <script src=""></script>
   </head>
 
   <body>
@@ -26,20 +27,6 @@
         </ul>
       </div>
     </header>
-    <div id="id_modal" class="modal" style="display: none;">
-      <div id="id_content" class="content">
-        <header class="modalHeader">
-          <h2 id="titleModal">Erro!</h2>
-        </header>
-        <div style="margin: auto" class="container">
-          <p id="erroDesc" style="text-align: center"></p>
-        </div>
-
-        <footer id="modalBottom" class="modalFooter">
-          <button class="btn-fechar" onclick="fechar()">Fechar</button>
-        </footer>
-      </div>
-    </div>
     <div class="banner">
       <div class="div_banner_txt">
         <h1 class="banner_txt1">Seja bem vindo ao hospício!</h1>
@@ -364,8 +351,12 @@
     setor_escolhido = Number(setor.value);
 
     if (setor_escolhido == 0) {
-      erroDesc.innerHTML = "Escolha um setor para continuar.";
-      id_modal.style.display = "flex";
+      setor.style.border = "2px solid red";
+      setor.style.color = "red";
+      setTimeout(() => {
+        setor.style.border = "2px solid black";
+        setor.style.color = "black";
+      }, "3000");
     } else {
       div_select.style.display = "none";
       div_setor.style.display = "flex";
@@ -502,8 +493,16 @@
     var sul_total = sul_int + sul_meia;
 
     if (entrada_int == 0 && entrada_meia == 0) {
-      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
-      id_modal.style.display = "block";
+      select_entrada_int.style.border = "2px solid red";
+      select_entrada_meia.style.border = "2px solid red";
+      select_entrada_int.style.color = "red";
+      select_entrada_meia.style.color = "red";
+      setTimeout(() => {
+        select_entrada_int.style.border = "2px solid black";
+        select_entrada_meia.style.border = "2px solid black";
+        select_entrada_int.style.color = "black";
+        select_entrada_meia.style.color = "black";
+      }, "3000");
     } else {
       div_setor.style.display = "none";
       div_setor2.style.display = "none";
@@ -526,7 +525,10 @@
           )}`;
           span_total.innerHTML = `${oeste_superior_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = oeste_superior_total;
           break;
@@ -534,7 +536,10 @@
           span_qtd_total_inteira.innerHTML = entrada_int;
           span_total_inteira.innerHTML = `${business_int.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           span_qtd_total_meia.innerHTML = entrada_meia;
           span_total_meia.innerHTML = `${business_meia.toLocaleString("pt-br", {
@@ -551,7 +556,10 @@
           span_qtd_total_inteira.innerHTML = entrada_int;
           span_total_inteira.innerHTML = `${camarote_int.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           span_qtd_total_meia.innerHTML = entrada_meia;
           span_total_meia.innerHTML = `${camarote_meia.toLocaleString("pt-br", {
@@ -577,7 +585,10 @@
           )}`;
           span_total.innerHTML = `${minha_cadeira_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = minha_cadeira_total;
           break;
@@ -611,7 +622,10 @@
           )}`;
           span_total.innerHTML = `${leste_sup_cent_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = leste_sup_cent_total;
           break;
@@ -628,7 +642,10 @@
           )}`;
           span_total.innerHTML = `${leste_sup_cent_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = leste_sup_cent_total;
           break;
@@ -645,7 +662,10 @@
           )}`;
           span_total.innerHTML = `${leste_inf_cent_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = leste_inf_cent_total;
           break;
@@ -662,7 +682,10 @@
           )}`;
           span_total.innerHTML = `${leste_inf_lat_total.toLocaleString(
             "pt-br",
-            { style: "currency", currency: "BRL" }
+            {
+              style: "currency",
+              currency: "BRL",
+            }
           )}`;
           total = leste_inf_lat_total;
           break;
@@ -722,8 +745,7 @@
       senhaVar == "" ||
       confirmarSenhaVar == ""
     ) {
-      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
-      id_modal.style.display = "block";
+      alert("Preencha todos os campos!");
     } else {
       fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -767,8 +789,7 @@
     var senhaVar = input_senha.value;
 
     if (cpfVar == "" || senhaVar == "") {
-      erroDesc.innerHTML = "Preencha todos os campos para continuar.";
-      id_modal.style.display = "block";
+      alert("Preencha todos os campos!");
       return false;
     } else {
       console.log("FORM LOGIN: ", cpfVar);
@@ -905,6 +926,6 @@
   }
 
   function fechar() {
-    id_modal.style.display = "none"
+    id_modal.style.display = "none";
   }
 </script>
