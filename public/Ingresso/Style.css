@@ -255,6 +255,11 @@ h4 {
   display: none;
 }
 
+.titulo_compra {
+  align-self: center;
+  display: none;
+}
+
 .btn_localizacao {
   height: 5vh;
   width: 10vw;
