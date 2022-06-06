@@ -15,7 +15,7 @@
     />
   </head>
 
-  <body>
+  <body onload="vetor()">
     <header class="header">
       <div class="container">
         <div class="container logo">
@@ -194,7 +194,7 @@
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Cassio.png";
         removeData(chartData);
-        var data = [82, 64, 57, 88, 70];
+        var data = [drible[0], chute[0], velocidade[0], defesa[0], passe[0]];
         addData(chartData, labelsGoleiros, data);
         break;
       case 1:
@@ -203,7 +203,7 @@
         idade_jogador.innerHTML = "25 anos";
         img_jogador.src = "imgs/Ivan.png";
         removeData(chartData);
-        var data = [74, 55, 50, 79, 62];
+        var data = [drible[1], chute[1], velocidade[1], defesa[1], passe[1]];
         addData(chartData, labelsGoleiros, data);
         break;
       case 2:
@@ -212,7 +212,7 @@
         idade_jogador.innerHTML = "20 anos";
         img_jogador.src = "imgs/Donelli.png";
         removeData(chartData);
-        var data = [72, 58, 52, 75, 67];
+        var data = [drible[2], chute[2], velocidade[2], defesa[2], passe[2]];
         addData(chartData, labelsGoleiros, data);
         break;
       case 3:
@@ -221,7 +221,7 @@
         idade_jogador.innerHTML = "34 anos";
         img_jogador.src = "imgs/Gil.png";
         removeData(chartData);
-        var data = [55, 50, 70, 90, 65];
+        var data = [drible[3], chute[3], velocidade[3], defesa[3], passe[3]];
         addData(chartData, labelsJogador, data);
         break;
       case 4:
@@ -230,7 +230,7 @@
         idade_jogador.innerHTML = "23 anos";
         img_jogador.src = "imgs/Joao Vitor.png";
         removeData(chartData);
-        var data = [70, 45, 81, 87, 75];
+        var data = [drible[4], chute[4], velocidade[4], defesa[4], passe[4]];
         addData(chartData, labelsJogador, data);
         break;
       case 5:
@@ -239,70 +239,70 @@
         idade_jogador.innerHTML = "23 anos";
         img_jogador.src = "imgs/r-gustavo.png";
         removeData(chartData);
-        var data = [65, 42, 78, 80, 70];
+        var data = [drible[5], chute[5], velocidade[5], defesa[5], passe[5]];
         addData(chartData, labelsJogador, data);
         break;
-        case 6:
+      case 6:
         nome_jogador.innerHTML = "Fagner";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "32 anos";
         img_jogador.src = "imgs/Fagner.png";
         removeData(chartData);
-        var data = [65, 57, 84, 85, 80];
+        var data = [drible[6], chute[6], velocidade[6], defesa[6], passe[6]];
         addData(chartData, labelsJogador, data);
         break;
-        case 7:
+      case 7:
         nome_jogador.innerHTML = "Fabio Santos";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "36 anos";
         img_jogador.src = "imgs/Fabio Santos.png";
         removeData(chartData);
-        var data = [72, 60, 73, 79, 85];
+        var data = [drible[7], chute[7], velocidade[7], defesa[7], passe[7]];
         addData(chartData, labelsJogador, data);
         break;
-        case 8:
+      case 8:
         nome_jogador.innerHTML = "Lucas Piton";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "21 anos";
         img_jogador.src = "imgs/piton.png";
         removeData(chartData);
-        var data = [70, 57, 83, 75, 79];
+        var data = [drible[8], chute[8], velocidade[8], defesa[8], passe[8]];
         addData(chartData, labelsJogador, data);
         break;
-        case 9:
+      case 9:
         nome_jogador.innerHTML = "Rafael Ramos";
         posicao_jogador.innerHTML = "Lateral";
         idade_jogador.innerHTML = "27 anos";
         img_jogador.src = "imgs/r-ramos.png";
         removeData(chartData);
-        var data = [73, 55, 85, 72, 75];
+        var data = [drible[9], chute[9], velocidade[9], defesa[9], passe[9]];
         addData(chartData, labelsJogador, data);
         break;
-        case 10:
+      case 10:
         nome_jogador.innerHTML = "Cantillo";
         posicao_jogador.innerHTML = "Volante";
         idade_jogador.innerHTML = "28 anos";
         img_jogador.src = "imgs/cantillo.png";
         removeData(chartData);
-        var data = [75, 70, 65, 60, 72];
+        var data = [drible[10], chute[10], velocidade[10], defesa[10], passe[10]];
         addData(chartData, labelsJogador, data);
         break;
-        case 11:
+      case 11:
         nome_jogador.innerHTML = "Du Queiroz";
         posicao_jogador.innerHTML = "Volante";
         idade_jogador.innerHTML = "22 anos";
         img_jogador.src = "imgs/du-queiroz.png";
         removeData(chartData);
-        var data = [67, 65, 78, 80, 70];
+        var data = [drible[11], chute[11], velocidade[11], defesa[11], passe[11]];
         addData(chartData, labelsJogador, data);
         break;
-        case 12:
+      case 12:
         nome_jogador.innerHTML = "Giuliano";
         posicao_jogador.innerHTML = "Meio-Campista";
         idade_jogador.innerHTML = "32 anos";
         img_jogador.src = "imgs/giuliano.png";
         removeData(chartData);
-        var data = [78, 77, 60, 73, 82];
+        var data = [drible[12], chute[12], velocidade[12], defesa[12], passe[12]];
         addData(chartData, labelsJogador, data);
         break;
       case 13:
@@ -311,7 +311,7 @@
         idade_jogador.innerHTML = "24 anos";
         img_jogador.src = "imgs/Maycon.png";
         removeData(chartData);
-        var data = [67, 75, 78, 78, 82];
+        var data = [drible[13], chute[13], velocidade[13], defesa[13], passe[13]];
         addData(chartData, labelsJogador, data);
         break;
       case 14:
@@ -320,7 +320,7 @@
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Paulinho.png";
         removeData(chartData);
-        var data = [70, 79, 80, 70, 81];
+        var data = [drible[14], chute[14], velocidade[14], defesa[14], passe[14]];
         addData(chartData, labelsJogador, data);
         break;
       case 15:
@@ -329,25 +329,25 @@
         idade_jogador.innerHTML = "34 anos";
         img_jogador.src = "imgs/Renato Augusto.png";
         removeData(chartData);
-        var data = [87, 85, 72, 60, 85];
+        var data = [drible[15], chute[15], velocidade[15], defesa[15], passe[15]];
         addData(chartData, labelsJogador, data);
         break;
-        case 16:
+      case 16:
         nome_jogador.innerHTML = "Adson";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "21 anos";
         img_jogador.src = "imgs/adson.png";
         removeData(chartData);
-        var data = [79, 72, 86, 40, 70];
+        var data = [drible[16], chute[16], velocidade[16], defesa[16], passe[16]];
         addData(chartData, labelsJogador, data);
         break;
-        case 17:
+      case 17:
         nome_jogador.innerHTML = "Gustavo Silva";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "24 anos";
         img_jogador.src = "imgs/g-silva.png";
         removeData(chartData);
-        var data = [84, 76, 88, 43, 73];
+        var data = [drible[17], chute[17], velocidade[17], defesa[17], passe[17]];
         addData(chartData, labelsJogador, data);
         break;
       case 18:
@@ -356,7 +356,7 @@
         idade_jogador.innerHTML = "25 anos";
         img_jogador.src = "imgs/Roger Guedes.png";
         removeData(chartData);
-        var data = [87, 81, 90, 45, 75];
+        var data = [drible[18], chute[18], velocidade[18], defesa[18], passe[18]];
         addData(chartData, labelsJogador, data);
         break;
       case 19:
@@ -365,16 +365,16 @@
         idade_jogador.innerHTML = "35 anos";
         img_jogador.src = "imgs/Jo.png";
         removeData(chartData);
-        var data = [65, 85, 70, 39, 67];
+        var data = [drible[19], chute[19], velocidade[19], defesa[19], passe[19]];
         addData(chartData, labelsJogador, data);
         break;
-        case 20:
+      case 20:
         nome_jogador.innerHTML = "Junior Moraes";
         posicao_jogador.innerHTML = "Atacante";
         idade_jogador.innerHTML = "35 anos";
         img_jogador.src = "imgs/j-moraes.png";
         removeData(chartData);
-        var data = [67, 82, 71, 45, 70];
+        var data = [drible[20], chute[20], velocidade[20], defesa[20], passe[20]];
         addData(chartData, labelsJogador, data);
         break;
       case 21:
@@ -383,7 +383,7 @@
         idade_jogador.innerHTML = "33 anos";
         img_jogador.src = "imgs/Willian.png";
         removeData(chartData);
-        var data = [92, 74, 95, 45, 84];
+        var data = [drible[21], chute[21], velocidade[21], defesa[21], passe[21]];
         addData(chartData, labelsJogador, data);
         break;
     }
@@ -406,5 +406,55 @@
     });
     console.log("DATASET:::: ", chart.data.datasets);
     chart.update();
+  }
+
+  var drible = [];
+  var chute = [];
+  var velocidade = [];
+  var defesa = [];
+  var passe = [];
+
+  function vetor() {
+    fetch("/usuarios/vetor", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO vetor()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((resposta) => {
+            console.log(resposta);
+            console.log(JSON.stringify(resposta));
+
+            for (var i = 0; i < resposta.length; i++) {
+              var recebimentoDrible = resposta[i].Drible;
+              var recebimentoChute = resposta[i].Chute;
+              var recebimentoVelocidade = resposta[i].Velocidade;
+              var recebimentoDefesa = resposta[i].Defesa;
+              var recebimentoPasse = resposta[i].Passe;
+
+              drible.push(recebimentoDrible);
+              chute.push(recebimentoChute);
+              velocidade.push(recebimentoVelocidade);
+              defesa.push(recebimentoDefesa);
+              passe.push(recebimentoPasse);
+            }
+          });
+        } else {
+          console.log("Houve um erro ao tentar realizar o vetor!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
   }
 </script>
