@@ -754,7 +754,7 @@
       alert("Digite um email válido!");
     } else if (cpfVar.length != 11) {
       alert("Digite um CPF válido!");
-    } else if (telefoneVar.length > 11 || telefoneVar.length < 10) {
+    } else if (telefoneVar.length != 9) {
       alert("Digite um telefone válido!");
     } else {
       fetch("/usuarios/cadastrar", {

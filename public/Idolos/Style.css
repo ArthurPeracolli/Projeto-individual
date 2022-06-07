@@ -207,7 +207,6 @@ html {
 
 .container_idolo {
   margin-top: 5vh;
-  height: 88vh;
   border: solid 1px black;
   width: 70%;
   display: flex;
@@ -248,6 +247,7 @@ html {
   background-image: url(imgs/wall-corinthians.jpg);
   background-size: 110vh;
   margin: 0;
+  height: 88vh;
   width: 100%;
   flex-direction: column;
   overflow: auto;
