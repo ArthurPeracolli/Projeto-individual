@@ -77,6 +77,7 @@
       <div class="div_bilheteria" id="div_bilheteria">
         <h1 class="titulo_estadio" id="titulo_bilheteria">Bilheteria</h1>
         <h1 class="titulo_pagamento" id="titulo_pagamento">Pagamento</h1>
+        <h1 class="titulo_compra" id="titulo_cadastro">Cadastro concluído !</h1>
         <h1 class="titulo_compra" id="titulo_compra">Obrigado Pela Compra !</h1>
         <div id="div_select" class="div_block">
           <h3>Escolha o setor:</h3>
@@ -161,7 +162,7 @@
         </div>
         <div class="div_dados_e_total" id="div_dados_e_total">
           <div class="div_dados_usuario" style="display: none" id="div_setor3">
-            <h2>Insira os seus dados:</h2>
+            <h2 id="h2_info">Insira os seus dados:</h2>
             <div class="div_info_usuario" id="div_info_usuario">
               <span class="span_usuario">Nome:</span>
               <input
@@ -747,6 +748,14 @@
       confirmarSenhaVar == ""
     ) {
       alert("Preencha todos os campos!");
+    } else if (emailVar.indexOf("@") == -1) {
+      alert("Digite um email válido!");
+    } else if (emailVar.indexOf(".com") == -1) {
+      alert("Digite um email válido!");
+    } else if (cpfVar.length != 11) {
+      alert("Digite um CPF válido!");
+    } else if (telefoneVar.length > 11 || telefoneVar.length < 10) {
+      alert("Digite um telefone válido!");
     } else {
       fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -765,11 +774,14 @@
           console.log("resposta: ", resposta);
 
           if (resposta.ok) {
-            erroDesc.innerHTML = "Dados confirmados. Faça login.";
-            id_modal.style.display = "block";
+            titulo_cadastro.style.display = "flex";
+            div_info_usuario.style.display = "none";
+            div_total.style.display = "none";
+            h2_info.style.display = "none";
             setTimeout(() => {
               div_login_usuario.style.display = "flex";
-              div_info_usuario.style.display = "none";
+              titulo_cadastro.style.display = "none";
+              h2_info.style.display = "flex";
             }, "2000");
 
             limparFormulario();
